@@ -1,0 +1,15 @@
+# docker-compose.yml
+version: '3'
+services:
+  ombi:
+    image: linuxserver/ombi
+    container_name: ombi
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+    ports:
+      - 80:3579
+    volumes:
+      - /docker/ombi/config/:/config

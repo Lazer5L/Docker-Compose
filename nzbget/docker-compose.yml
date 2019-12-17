@@ -1,0 +1,15 @@
+version: '3'
+services:
+  nzbget:
+    image: linuxserver/nzbget
+    container_name: nzbget
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+    volumes:
+      - /docker/nzbget/config:/config
+      - /mnt/nas/Downloads/nzb:/downloads
+    ports:
+      - 6789:6789
+    restart: unless-stopped

@@ -1,0 +1,19 @@
+# docker-compose.yml
+
+version: '3'
+services:
+  deluge:
+    image: linuxserver/deluge
+    container_name: deluge
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+      - UMASK_SET=022 #Optional
+      - DELUGE_LOGLEVEL=error #Optional
+    ports:
+      - 8112:8112
+    volumes:
+      - /docker/deluge/config:/config
+      - /mnt/nas/Downloads/deluge:/downloads
