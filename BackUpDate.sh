@@ -1,7 +1,7 @@
 #!/bin/sh
-docker-compose -f /guacozy/docker-compose.yml pull
-docker-compose -f /deluge/docker-compose.yml pull
-docker-compose -f /nzbget/docker-compose.yml pull
-docker-compose -f /ombi/docker-compose.yml pull
-docker-compose -f /sonarr/docker-compose.yml pull
-docker-compose -f /unifi/docker-compose.yml pull
+docker-compose -f /Docker-Compose/guacozy/docker-compose.yml pull
+docker-compose -f /Docker-Compose/deluge/docker-compose.yml pull
+docker-compose -f /Docker-Compose/nzbget/docker-compose.yml pull
+docker-compose -f /Docker-Compose/ombi/docker-compose.yml pull
+docker-compose -f /Docker-Compose/sonarr/docker-compose.yml pull
+docker-compose -f /Docker-Compose/unifi/docker-compose.yml pull
