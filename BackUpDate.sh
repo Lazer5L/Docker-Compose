@@ -1,5 +1,8 @@
 #!/bin/sh
 
+#Pull latest Git merges
+git --git-dir=/Docker-Compose/.git --work-tree=/Docker-Compose pull
+
 #Pull latest versions of containers
 docker-compose -f /Docker-Compose/guacozy/docker-compose.yml pull
 docker-compose -f /Docker-Compose/deluge/docker-compose.yml pull
