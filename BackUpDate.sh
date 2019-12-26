@@ -17,7 +17,7 @@ docker-compose -f /Docker-Compose/sonarr/docker-compose.yml stop
 docker-compose -f /Docker-Compose/unifi/docker-compose.yml stop
 
 #Backup all config directories and files
-cp -R /docker/ /mnt/nas/bk/docker
+cp -R /docker/ /mnt/nas/bk
 
 #Start all containers
 docker-compose -f /Docker-Compose/guacozy/docker-compose.yml up -d
