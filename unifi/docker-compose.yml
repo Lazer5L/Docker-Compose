@@ -1,4 +1,4 @@
-version: "2"
+version: "3.5"
 services:
   unifi-controller:
     image: linuxserver/unifi-controller
@@ -19,9 +19,10 @@ services:
       - 8880:8880
       - 6789:6789
     restart: unless-stopped
-    networks:
-      - unifi
-networks:
-  unifi:
-    external: true
+#    networks:
+#      - unifi
+
+#networks:
+#  unifi:
+#    external: true
 
