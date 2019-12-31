@@ -19,6 +19,10 @@ docker-compose -f /Docker-Compose/ombi/docker-compose.yml stop
 docker-compose -f /Docker-Compose/sonarr/docker-compose.yml stop
 docker-compose -f /Docker-Compose/unifi/docker-compose.yml stop
 
+#Update cert.crt and cert.key
+cp /docker/ssh/acme/LetsEncryptTOB.crt /docker/ssh/acme/cert.crt
+cp /docker/ssh/acme/LetsEncryptTOB.key /docker/ssh/acme/cert.key
+
 #Backup all config directories and files
 cp -R /docker/ /mnt/nas/bk
 
