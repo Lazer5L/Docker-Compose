@@ -9,6 +9,7 @@ services:
       - MEM_LIMIT=1024M #optional
     volumes:
       - /docker/unifi/config:/config
+      - /docker/ssh/acme:/unifi/cert
     ports:
       - 3478:3478/udp
       - 10001:10001/udp
