@@ -1,7 +1,7 @@
 version: "3.5"
 services:
   unifi-controller:
-    network_mode: host
+    networks: host
     image: linuxserver/unifi-controller
     container_name: unifi-controller
     environment:
