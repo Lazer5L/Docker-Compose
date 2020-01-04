@@ -36,3 +36,6 @@ docker-compose -f /Docker-Compose/ombi/docker-compose.yml up -d
 #docker-compose -f /Docker-Compose/sonarr/docker-compose.yml up -d
 docker-compose -f /Docker-Compose/unifi/docker-compose.yml up -d
 #docker-compose -f /Docker-Compose/plex/docker-compose.yml up -d
+
+#Prune old images
+docker image prune -f
