@@ -20,10 +20,3 @@ services:
       - 8880:8880
       - 6789:6789
     restart: unless-stopped
-    build:
-      network: host
-
-#networks:
-#  unifi:
-#    external: true
-
