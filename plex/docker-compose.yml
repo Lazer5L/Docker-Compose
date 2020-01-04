@@ -1,0 +1,19 @@
+version: '2.2'
+services:
+  plex:
+    container_name: plex
+    image: plexinc/pms-docker
+    restart: unless-stopped
+    environment:
+      - TZ=America/Chicago
+      - PLEX_CLAIM=zcR1z2DrYcNwn8Fgsx8d
+    network_mode: host
+    volumes:
+      - /docker/plex/config:/config
+      - /mnt/trancode:/transcode
+      - /mnt/nas/TV\ Shows:/tv
+      - /mnt/nas/Movies:/movies
+      = /mnt/nas/Music:/music
+      - /mnt/nas/Mobile\ Pictures:/mobile
+      - /mnt/nas/My\ Pictures:/pictures
+      - /mnt/nas/Plex/Application\ Support/Plex\ Media\ Server/Metadata/:/var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/Metadata
