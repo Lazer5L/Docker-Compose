@@ -13,7 +13,7 @@ services:
       - /mnt/trancode:/transcode
       - /mnt/nas/TV\ Shows:/tv
       - /mnt/nas/Movies:/movies
-      = /mnt/nas/Music:/music
+      - /mnt/nas/Music:/music
       - /mnt/nas/Mobile\ Pictures:/mobile
       - /mnt/nas/My\ Pictures:/pictures
       - /mnt/nas/Plex/Application\ Support/Plex\ Media\ Server/Metadata/:/var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/Metadata
