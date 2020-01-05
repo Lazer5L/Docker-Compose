@@ -9,7 +9,7 @@ services:
       - PLEX_CLAIM=zcR1z2DrYcNwn8Fgsx8d
     network_mode: host
     volumes:
-      - /docker/plex/config:/config
+      - /docker/plex/config/plexmediaserver:/config
       - /mnt/trancode:/transcode
       - /mnt/nas/TV\ Shows:/tv
       - /mnt/nas/Movies:/movies
