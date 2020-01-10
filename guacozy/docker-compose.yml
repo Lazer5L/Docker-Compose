@@ -12,6 +12,8 @@ services:
       - FIELD_ENCRYPTION_KEY=qjq4ObsXMqiqQyfKgD-jjEGm4ep8RaHKGRg4ohGCi1A=
       - DJANGO_DB_URL=postgres://postgres@db:5432/postgres
       - DJANGO_ALLOWED_HOSTS=*
+    networks:
+      - DockerInternal
     ports:
       - 10080:80
       - 10443:443
@@ -20,9 +22,13 @@ services:
   guacd:
     image: guacamole/guacd
     restart: always
+    networks:
+      - DockerInternal
   db:
     image: postgres:10.4-alpine
     restart: always
+    networks:
+      - DockerInternal
     volumes:
     - /docker/guacozy/db:/var/lib/postgresql/data
 
