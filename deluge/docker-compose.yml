@@ -12,8 +12,13 @@ services:
       - TZ=America/Chicago
       - UMASK_SET=022 #Optional
       - DELUGE_LOGLEVEL=error #Optional
+    networks:
+      - DockerInternal
     ports:
       - 8112:8112
     volumes:
       - /docker/deluge/config:/config
       - /mnt/nas/Downloads/deluge:/downloads
+  networks:
+    DockerInternal:
+      external: true

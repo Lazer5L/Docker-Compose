@@ -10,6 +10,11 @@ services:
     volumes:
       - /docker/nzbget/config:/config
       - /mnt/nas/Downloads/nzb:/downloads
+    networks:
+      - DockerInternal
     ports:
       - 6789:6789
     restart: unless-stopped
+  networks:
+    DockerInternal:
+      external: true    

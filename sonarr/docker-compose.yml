@@ -13,6 +13,8 @@ services:
       - /mnt/nas/Tv \Shows:/tv
       - /mnt/nas/Downloads/nzb:/downloadsnzb
       - /mnt/nas/Downloads/Complete:/downloadstor
+    networks:
+      - DockerInternal
     ports:
       - 8989:8989
     restart: unless-stopped
@@ -30,6 +32,8 @@ services:
         - /mnt/nas/Movies:/movies
         - /mnt/nas/Downloads/nzb:/downloadsnzb
         - /mnt/nas/Downloads/Complete:/downloadstor
+      networks:
+        - DockerInternal
       ports:
         - 7878:7878
       restart: unless-stopped
@@ -47,6 +51,8 @@ services:
         - /mnt/nas/Music:/music
         - /mnt/nas/Downloads/nzb:/downloadsnzb
         - /mnt/nas/Downloads/Complete:/downloadstor
+      networks:
+        - DockerInternal
       ports:
         - 8686:8686
       restart: unless-stopped
@@ -62,6 +68,11 @@ services:
     volumes:
       - /docker/sonarr/config:/config
       - /mnt/nas/Downloads/:/downloads
+    networks:
+      - DockerInternal
     ports:
       - 9117:9117
     restart: unless-stopped
+  networks:
+    DockerInternal:
+      external: true
