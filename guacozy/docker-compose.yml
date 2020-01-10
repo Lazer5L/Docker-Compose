@@ -26,3 +26,6 @@ services:
     volumes:
     - /docker/guacozy/db:/var/lib/postgresql/data
 
+networks:
+  DockerInternal:
+    external: true
