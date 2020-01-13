@@ -18,6 +18,7 @@ services:
     volumes:
       - /docker/deluge/config:/config
       - /mnt/nas/Downloads/deluge:/downloads
+      - /mnt/nas/Downloads/Complete:/complete
 #  networks:
 #    DockerInternal:
 #      external: true
