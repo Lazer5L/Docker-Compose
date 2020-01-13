@@ -14,8 +14,8 @@ services:
     ports:
       - 80:3579
     volumes:
-      - /docker/ombi/config/:/config
-      
+      - /docker/ombi/config:/config
+
   networks:
     DockerInternal:
       external: true
