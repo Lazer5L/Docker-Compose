@@ -9,13 +9,13 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=America/Chicago
-    networks:
-      - DockerInternal  
+#    networks:
+#      - DockerInternal  
     ports:
       - 80:3579
     volumes:
       - /docker/ombi/config:/config
 
-  networks:
-    DockerInternal:
-      external: true
+#  networks:
+#    DockerInternal:
+#      external: true
