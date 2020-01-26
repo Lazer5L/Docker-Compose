@@ -27,7 +27,7 @@ services:
         - TZ=America/Chicago
         - UMASK_SET=022 #optional
       volumes:
-        - /docker/sonarr/config:/config
+        - /docker/radarr/config:/config
         - /mnt/nas/Movies:/movies
         - /mnt/nas/Downloads/nzb:/downloadsnzb
         - /mnt/nas/Downloads/Complete:/downloadstor
@@ -45,7 +45,7 @@ services:
         - TZ=America/Chicago
         - UMASK_SET=022 #optional
       volumes:
-        - /docker/sonarr/config:/config
+        - /docker/lidarr/config:/config
         - /mnt/nas/Music:/music
         - /mnt/nas/Downloads/nzb:/downloadsnzb
         - /mnt/nas/Downloads/Complete:/downloadstor
@@ -63,7 +63,7 @@ services:
       - TZ=America/Chicago
       - RUN_OPTS=run options here #optional
     volumes:
-      - /docker/sonarr/config:/config
+      - /docker/jackett/config:/config
       - /mnt/nas/Downloads/:/downloads
     network_mode: DockerInternal
     ports:
