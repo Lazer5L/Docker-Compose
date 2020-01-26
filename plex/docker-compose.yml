@@ -8,6 +8,8 @@ services:
       - TZ=America/Chicago
       - PLEX_CLAIM=zcR1z2DrYcNwn8Fgsx8d
     network_mode: DockerInternal
+    ports:
+      - 32400:32400
     volumes:
       - /docker/plex/config/plexmediaserver:/config
       - /mnt/trancode:/transcode
