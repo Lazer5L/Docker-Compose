@@ -10,8 +10,7 @@ services:
     volumes:
       - /docker/unifi/config:/config
       - /docker/ssh/acme:/unifi/cert
-    networks:
-      - DockerInternal
+    network_mode: DockerInternal
     ports:
       - 3478:3478/udp
       - 10001:10001/udp
@@ -22,7 +21,3 @@ services:
       - 8880:8880
       - 6789:6789
     restart: unless-stopped
-    
-  networks:
-    DockerInternal:
-      external: true
