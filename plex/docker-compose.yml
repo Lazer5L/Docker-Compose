@@ -7,8 +7,9 @@ services:
     environment:
       - TZ=America/Chicago
       - PLEX_CLAIM=zcR1z2DrYcNwn8Fgsx8d
-      networks:
-        - DockerInternal
+    network_mode: DocketInternal
+#    networks:
+#      - DockerInternal
     volumes:
       - /docker/plex/config/plexmediaserver:/config
       - /mnt/trancode:/transcode
@@ -18,6 +19,6 @@ services:
       - /mnt/nas/Mobile\ Pictures:/mobile
       - /mnt/nas/My\ Pictures:/pictures
       - /mnt/nas/Plex/Metadata/:/var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/Metadata
-  networks:
-    DockerInternal:
-      external: true
+#  networks:
+#    DockerInternal:
+#      external: true
