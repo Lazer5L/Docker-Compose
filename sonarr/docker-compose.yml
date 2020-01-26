@@ -9,7 +9,7 @@ services:
       - TZ=America/Chicago
       - UMASK_SET=022 #optional
     volumes:
-      - /sonarr/config:/config
+      - /docker/sonarr/config:/config
       - /mnt/nas/Tv \Shows:/tv
       - /mnt/nas/Downloads/nzb:/downloadsnzb
       - /mnt/nas/Downloads/Complete:/downloadstor
