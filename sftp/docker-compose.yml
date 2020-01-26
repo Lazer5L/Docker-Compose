@@ -2,7 +2,7 @@ version: '3.5'
 services:
   sftptest:
     image: atmoz/sftp
-    container_name: sftptest
+    container_name: sftp
     restart: unless-stopped
     network_mode: DockerInternal
     volumes:
