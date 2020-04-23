@@ -10,7 +10,7 @@ services:
       - UMASK_SET=022 #optional
     volumes:
       - /docker/sonarr/config:/config
-      - /mnt/nas/TV\ Shows:/tv
+      - "/mnt/nas/TV\ Shows":/tv
       - /mnt/nas/Downloads/nzb:/downloadsnzb
       - /mnt/nas/Downloads/Complete:/downloadstor
     network_mode: DockerInternal
