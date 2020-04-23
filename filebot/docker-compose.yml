@@ -1,0 +1,23 @@
+version: '3'
+services:
+  sonarr:
+    image: rednoah/filebot
+    container_name: filebot
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+      - UMASK_SET=022 #optional
+    volumes:
+      - /docker/filebot/filebotconfig:/config
+      - /mnt/nas/Tv \Shows:/tv
+      - /mnt/nas/Downloads/nzb:/downloadsnzb
+      - /mnt/nas/Downloads/Complete:/downloadstor
+    network_mode: DockerInternal
+    restart: unless-stopped
+
+docker run --rm -it -v $PWD:/volume1 -v data:/data rednoah/filebot -script fn:sysinfo
+
+docker run --rm -it -v $PWD:/volume1 -v data:/data -p 5452:5452 rednoah/filebot:node
+
+docker run --rm -it -v $PWD:/volume1 -v data:/data rednoah/filebot:watcher /volume1/input --output /volume1/output
