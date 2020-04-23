@@ -32,8 +32,8 @@ rsync --archive --verbose --recursive --checksum /docker/ /mnt/nas/bk
 
 #Start all containers
 docker-compose -f /Docker-Compose/guacozy/docker-compose.yml up -d
-#docker-compose -f /Docker-Compose/deluge/docker-compose.yml up -d
-#docker-compose -f /Docker-Compose/nzbget/docker-compose.yml up -d
+docker-compose -f /Docker-Compose/deluge/docker-compose.yml up -d
+docker-compose -f /Docker-Compose/nzbget/docker-compose.yml up -d
 docker-compose -f /Docker-Compose/ombi/docker-compose.yml up -d
 #docker-compose -f /Docker-Compose/sonarr/docker-compose.yml up -d
 docker-compose -f /Docker-Compose/unifi/docker-compose.yml up -d
