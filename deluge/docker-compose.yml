@@ -24,4 +24,6 @@ services:
       #DockerInternal:
     restart: unless-stopped   
     external_links:
-      - deluge:deluge
+      - sonarr:sonarr
+      - sonarr:radarr
+      - sonarr:lidar
