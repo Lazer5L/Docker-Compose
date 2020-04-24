@@ -22,5 +22,4 @@ services:
       - /mnt/nas/Downloads/Complete:/complete
     networks:
       DockerInternal:
-        external: true
     restart: unless-stopped   
