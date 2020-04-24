@@ -9,7 +9,7 @@ services:
       - TZ=America/Chicago
     volumes:
       - /docker/nzbget/config:/config
-      - /mnt/nas/Downloads/nzb:/downloads
+      - /mnt/nas/Downloads/nzb/:/downloads
     network_mode: DockerInternal
     ports:
       - 16789:16789
