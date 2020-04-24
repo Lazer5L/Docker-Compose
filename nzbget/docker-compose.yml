@@ -12,5 +12,5 @@ services:
       - /mnt/nas/Downloads/nzb/:/downloads
     network_mode: DockerInternal
     ports:
-      - 16789:16789
+      - 6789:6789
     restart: unless-stopped 
