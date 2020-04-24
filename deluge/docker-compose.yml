@@ -12,8 +12,7 @@ services:
       - TZ=America/Chicago
       - UMASK_SET=022 #Optional
       - DELUGE_LOGLEVEL=error #Optional
-    networks: 
-      - DockerInternal
+    network_mode: DockerInternal
     ports:
       - 8112:8112
     volumes:
@@ -21,7 +20,6 @@ services:
       - /mnt/nas/Downloads/deluge:/downloads
       - /mnt/nas/Downloads/torrents:/torrents
       - /mnt/nas/Downloads/Complete:/complete
-    restart: unless-stopped   
   networks:
     DockerInternal:
       external: true
