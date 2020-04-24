@@ -17,8 +17,6 @@ services:
     ports:
       - 8989:8989
     restart: unless-stopped
-    external_links:
-      - deluge:deluge
 
   radarr:
       image: linuxserver/radarr
