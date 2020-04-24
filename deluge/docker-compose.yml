@@ -20,6 +20,8 @@ services:
       - /mnt/nas/Downloads/deluge:/downloads
       - /mnt/nas/Downloads/torrents:/torrents
       - /mnt/nas/Downloads/Complete:/complete
-    networks:
-      DockerInternal:
+    #networks:
+      #DockerInternal:
     restart: unless-stopped   
+    external_links:
+      - deluge:deluge
