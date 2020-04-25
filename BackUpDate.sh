@@ -7,7 +7,7 @@ git --git-dir=/Docker-Compose/.git --work-tree=/Docker-Compose pull
 DockerFolder="ls -d /Docker-Compose/*"
 
 #Pull latest versions of containers
-forwach n ($DockerFolder) {
+foreach n ($DockerFolder) {
     docker-compose -f $n/docker-compose.yml pull
 }
 #docker-compose -f /Docker-Compose/guacozy/docker-compose.yml pull
