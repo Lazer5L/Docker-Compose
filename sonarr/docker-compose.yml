@@ -83,6 +83,7 @@ services:
           - /mnt/nas/Library/Comics:/comics
           - /mnt/nas/Downloads/nzb:/downloadsnzb
           - /mnt/nas/Downloads/Complete:/downloadstor
+        network_mode: DockerInternal
         ports:
           - 8090:8090
         restart: unless-stopped
