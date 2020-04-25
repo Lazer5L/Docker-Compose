@@ -70,20 +70,19 @@ services:
       - 9117:9117
     restart: unless-stopped
 
-    services:
-      mylar:
-        image: linuxserver/mylar
-        container_name: mylar
-        environment:
-          - PUID=1000
-          - PGID=1000
-          - TZ=America/Chicago
-        volumes:
-          - /docker/mylar/config:/config
-          - /mnt/nas/Library/Comics:/comics
-          - /mnt/nas/Downloads/nzb:/downloadsnzb
-          - /mnt/nas/Downloads/Complete:/downloadstor
-        network_mode: DockerInternal
-        ports:
-          - 8090:8090
-        restart: unless-stopped
+    mylar:
+      image: linuxserver/mylar
+      container_name: mylar
+      environment:
+        - PUID=1000
+        - PGID=1000
+        - TZ=America/Chicago
+      volumes:
+        - /docker/mylar/config:/config
+        - /mnt/nas/Library/Comics:/comics
+        - /mnt/nas/Downloads/nzb:/downloadsnzb
+        - /mnt/nas/Downloads/Complete:/downloadstor
+      network_mode: DockerInternal
+      ports:
+        - 8090:8090
+      restart: unless-stopped
