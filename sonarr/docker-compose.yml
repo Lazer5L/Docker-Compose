@@ -11,8 +11,8 @@ services:
     volumes:
       - /docker/sonarr/config:/config
       - "/mnt/nas/TV\ Shows/:/tv"
-      - /mnt/nas/Downloads/nzb:/downloadsnzb
-      - /mnt/nas/Downloads/Complete:/downloadstor
+      - /mnt/nas/Downloads/nzb/:/downloadsnzb
+      - /mnt/nas/Downloads/Complete/:/downloadstor
     network_mode: DockerInternal
     ports:
       - 8989:8989
