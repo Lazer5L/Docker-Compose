@@ -12,6 +12,7 @@ docker-compose -f /Docker-Compose/sonarr/docker-compose.yml pull
 docker-compose -f /Docker-Compose/unifi/docker-compose.yml pull
 docker-compose -f /Docker-Compose/plex/docker-compose.yml pull
 docker-compose -f /Docker-Compose/sftp/docker-compose.yml pull
+docker-compose -f /Docker-Compose/tautulli/docker-compose.yml pull
 
 #Stop running containers
 docker-compose -f /Docker-Compose/guacozy/docker-compose.yml stop
@@ -22,6 +23,7 @@ docker-compose -f /Docker-Compose/sonarr/docker-compose.yml stop
 docker-compose -f /Docker-Compose/unifi/docker-compose.yml stop
 docker-compose -f /Docker-Compose/plex/docker-compose.yml stop
 docker-compose -f /Docker-Compose/sftp/docker-compose.yml stop
+docker-compose -f /Docker-Compose/tautulli/docker-compose.yml stop
 
 #Update cert.crt and cert.key for Guacozy
 cp /docker/ssh/acme/LetsEncryptTOB.crt /docker/ssh/acme/cert.crt
@@ -39,6 +41,7 @@ docker-compose -f /Docker-Compose/sonarr/docker-compose.yml up -d
 docker-compose -f /Docker-Compose/unifi/docker-compose.yml up -d
 #docker-compose -f /Docker-Compose/plex/docker-compose.yml up -d
 #docker-compose -f /Docker-Compose/sftp/docker-compose.yml up -d
+docker-compose -f /Docker-Compose/tautulli/docker-compose.yml up -d
 
 #Prune old images
 docker image prune -f
