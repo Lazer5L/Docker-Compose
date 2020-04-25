@@ -1,0 +1,16 @@
+version: "3"
+services:
+  tautulli:
+    image: linuxserver/tautulli
+    container_name: tautulli
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+    volumes:
+      - /docker/tautulli:/config
+      - /docker/tautulli/logs:/logs
+    network_mode: DockerInternal
+    ports:
+      - 8181:8181
+    restart: unless-stopped
