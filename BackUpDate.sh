@@ -7,29 +7,10 @@ git --git-dir=/Docker-Compose/.git --work-tree=/Docker-Compose pull
 DockerFolder="ls -d /Docker-Compose/*"
 
 #Pull latest versions of containers
-foreach n ( $DockerFolder ) 
-    docker-compose -f $n/docker-compose.yml pull
-end
-#docker-compose -f /Docker-Compose/guacozy/docker-compose.yml pull
-#docker-compose -f /Docker-Compose/deluge/docker-compose.yml pull
-#docker-compose -f /Docker-Compose/nzbget/docker-compose.yml pull
-#docker-compose -f /Docker-Compose/ombi/docker-compose.yml pull
-#docker-compose -f /Docker-Compose/sonarr/docker-compose.yml pull
-#docker-compose -f /Docker-Compose/unifi/docker-compose.yml pull
-#docker-compose -f /Docker-Compose/plex/docker-compose.yml pull
-#docker-compose -f /Docker-Compose/sftp/docker-compose.yml pull
-#docker-compose -f /Docker-Compose/tautulli/docker-compose.yml pull
+for OUTPUT in $DockerFolder; do docker-compose -f $OUTPUT/docker-compose.yml pull; done
 
 #Stop running containers
-#docker-compose -f /Docker-Compose/guacozy/docker-compose.yml stop
-#docker-compose -f /Docker-Compose/deluge/docker-compose.yml stop
-#docker-compose -f /Docker-Compose/nzbget/docker-compose.yml stop
-#docker-compose -f /Docker-Compose/ombi/docker-compose.yml stop
-#docker-compose -f /Docker-Compose/sonarr/docker-compose.yml stop
-#docker-compose -f /Docker-Compose/unifi/docker-compose.yml stop
-#docker-compose -f /Docker-Compose/plex/docker-compose.yml stop
-#docker-compose -f /Docker-Compose/sftp/docker-compose.yml stop
-#docker-compose -f /Docker-Compose/tautulli/docker-compose.yml stop
+for OUTPUT in $DockerFolder; do docker-compose -f $OUTPUT/docker-compose.yml stop; done
 
 #Update cert.crt and cert.key for Guacozy
 cp /docker/ssh/acme/LetsEncryptTOB.crt /docker/ssh/acme/cert.crt
@@ -39,15 +20,7 @@ cp /docker/ssh/acme/LetsEncryptTOB.key /docker/ssh/acme/cert.key
 rsync --archive --verbose --recursive --checksum /docker/ /mnt/nas/bk
 
 #Start all containers
-docker-compose -f /Docker-Compose/guacozy/docker-compose.yml up -d
-docker-compose -f /Docker-Compose/deluge/docker-compose.yml up -d
-docker-compose -f /Docker-Compose/nzbget/docker-compose.yml up -d
-docker-compose -f /Docker-Compose/ombi/docker-compose.yml up -d
-docker-compose -f /Docker-Compose/sonarr/docker-compose.yml up -d
-docker-compose -f /Docker-Compose/unifi/docker-compose.yml up -d
-#docker-compose -f /Docker-Compose/plex/docker-compose.yml up -d
-#docker-compose -f /Docker-Compose/sftp/docker-compose.yml up -d
-docker-compose -f /Docker-Compose/tautulli/docker-compose.yml up -d
+for OUTPUT in $DockerFolder; do docker-compose -f $OUTPUT/docker-compose.yml up -d; done
 
 #Prune old images
 docker image prune -f
