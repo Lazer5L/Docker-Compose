@@ -9,7 +9,7 @@ function Do_Compose () {
 } #End Do_Compose
 
 #Define variables
-BackupLocation="/mnt/nas/bk" #Location to backup to
+BackupLocation="/mnt/nas/bk/Docker-Compose" #Location to backup to
 DockerFolder="/Docker-Compose/*" #Location of Docker-Compose
 Compose="docker-compose.yml" #Compose file used
 
