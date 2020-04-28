@@ -25,6 +25,7 @@ Do_Compose "stop"
 #Update cert.crt and cert.key for Guacozy
 cp /docker/ssh/acme/LetsEncryptTOB.crt /docker/ssh/acme/cert.crt
 cp /docker/ssh/acme/LetsEncryptTOB.key /docker/ssh/acme/cert.key
+cp /docker/ssh/acme/LetsEncryptTOB.pem /docker/ssh/acme/cert.pem
 
 #Backup all config directories and files
 rsync --archive --verbose --recursive --checksum /docker/ $BackupLocation
