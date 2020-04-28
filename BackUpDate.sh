@@ -30,7 +30,7 @@ Do_Compose
 #Prune old images
 docker image prune -f
 
-function Do_Compose { 
+function Do_Compose () { 
     # Each time you find docker-compose.yml run action using the set varilable
     for OUTPUT in $(find $DockerFolder -type f -name $Compose); 
         do 
