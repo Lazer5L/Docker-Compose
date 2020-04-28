@@ -11,7 +11,7 @@ function Do_Compose () {
 #Define variables
 BackupLocation="/mnt/nas/bk" #Location to backup to
 DockerFolder="/Docker-Compose/*" #Location of Docker-Compose
-Compose="docker-compose.yml"
+Compose="docker-compose.yml" #Compose file used
 
 #Pull latest Git merges
 git --git-dir=/Docker-Compose/.git --work-tree=/Docker-Compose pull
