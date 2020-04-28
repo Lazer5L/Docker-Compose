@@ -1,5 +1,13 @@
 #!/bin/sh
 
+function Do_Compose () { 
+    # Each time you find docker-compose.yml run action using the set varilable
+    for OUTPUT in $(find $DockerFolder -type f -name $Compose); 
+        do 
+            docker-compose -f $OUTPUT $Action;
+    done
+} #End Do_Compose
+
 #Define variables
 BackupLocation="/mnt/nas/bk" #Location to backup to
 DockerFolder="/Docker-Compose/*" #Location of Docker-Compose
@@ -29,11 +37,3 @@ Do_Compose
 
 #Prune old images
 docker image prune -f
-
-function Do_Compose () { 
-    # Each time you find docker-compose.yml run action using the set varilable
-    for OUTPUT in $(find $DockerFolder -type f -name $Compose); 
-        do 
-            docker-compose -f $OUTPUT $Action;
-    done
-} #End Do_Compose
