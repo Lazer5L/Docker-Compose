@@ -20,7 +20,7 @@ git --git-dir=/Docker-Compose/.git --work-tree=/Docker-Compose pull
 Do_Compose "pull"
 
 #Stop running containers
-#Do_Compose "stop"
+Do_Compose "stop"
 
 #Update cert.crt and cert.key for Guacozy
 cp /docker/ssh/acme/LetsEncryptTOB.crt /docker/ssh/acme/cert.crt
