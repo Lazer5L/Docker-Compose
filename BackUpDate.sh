@@ -4,7 +4,7 @@ function Do_Compose () {
     # Each time you find docker-compose.yml run action using the set varilable
     for OUTPUT in $(find $DockerFolder -type f -name $Compose); 
         do 
-            docker-compose -f $OUTPUT $Action;
+            docker-compose -f $OUTPUT $1;
     done
 } #End Do_Compose
 
@@ -17,12 +17,10 @@ Compose="docker-compose.yml"
 git --git-dir=/Docker-Compose/.git --work-tree=/Docker-Compose pull
 
 #Pull latest versions of containers
-Action="pull"
-Do_Compose
+Do_Compose "pull"
 
 #Stop running containers
-Action="stop"
-Do_Compose
+Do_Compose "stop"
 
 #Update cert.crt and cert.key for Guacozy
 cp /docker/ssh/acme/LetsEncryptTOB.crt /docker/ssh/acme/cert.crt
@@ -32,8 +30,7 @@ cp /docker/ssh/acme/LetsEncryptTOB.key /docker/ssh/acme/cert.key
 rsync --archive --verbose --recursive --checksum /docker/ $BackupLocation
 
 #Start all containers
-Action="up -d"
-Do_Compose
+Do_Compose "up -d"
 
 #Prune old images
 docker image prune -f
