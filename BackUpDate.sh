@@ -10,11 +10,11 @@ git --git-dir=/Docker-Compose/.git --work-tree=/Docker-Compose pull
 
 #Pull latest versions of containers
 Action="pull"
-Do_Compse
+Do_Comopse
 
 #Stop running containers
 Action="stop"
-Do_Compse
+Do_Compose
 
 #Update cert.crt and cert.key for Guacozy
 cp /docker/ssh/acme/LetsEncryptTOB.crt /docker/ssh/acme/cert.crt
@@ -25,7 +25,7 @@ rsync --archive --verbose --recursive --checksum /docker/ $BackupLocation
 
 #Start all containers
 Action="up -d"
-Do_Compse
+Do_Compose
 
 #Prune old images
 docker image prune -f
