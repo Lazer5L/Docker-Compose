@@ -10,7 +10,7 @@ git --git-dir=/Docker-Compose/.git --work-tree=/Docker-Compose pull
 
 #Pull latest versions of containers
 Action="pull"
-Do_Comopse
+Do_Compose
 
 #Stop running containers
 Action="stop"
