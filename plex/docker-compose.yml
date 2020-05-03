@@ -21,9 +21,10 @@ services:
     volumes:
       - /docker/plex/config/plexmediaserver:/config
       - /mnt/trancode:/transcode
-      - /mnt/nas/TV\ Shows:/tv
+      - "/mnt/nas/TV\ Shows:/tv"
+      - /mnt/nas/Anime:/anime
       - /mnt/nas/Movies:/movies
       - /mnt/nas/Music:/music
-      - /mnt/nas/Mobile\ Pictures:/mobile
-      - /mnt/nas/My\ Pictures:/pictures
-      - /mnt/nas/Plex/Metadata/:/var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/Metadata
+      - "/mnt/nas/Mobile\ Pictures:/mobile"
+      - "/mnt/nas/My\ Pictures:/pictures"
+      - "/mnt/nas/Plex/Metadata/:/var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/Metadata"
