@@ -1,0 +1,15 @@
+version: "3"
+services:
+  muximux:
+    image: linuxserver/muximux
+    container_name: muximux
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+    volumes:
+      - /docker/muximux/config:/config
+    network_mode: DockerInternal
+    ports:
+      - 1180:1180
+    restart: unless-stopped
