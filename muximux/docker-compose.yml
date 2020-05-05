@@ -11,5 +11,5 @@ services:
       - /docker/muximux/config:/config
     network_mode: DockerInternal
     ports:
-      - 1180:1180
+      - 80:80
     restart: unless-stopped
