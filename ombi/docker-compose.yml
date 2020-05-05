@@ -14,3 +14,4 @@ services:
       - 80:3579
     volumes:
       - /docker/ombi/config:/config
+      - /docker/ssh/acme:/ssl
