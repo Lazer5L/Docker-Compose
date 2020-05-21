@@ -86,3 +86,20 @@ services:
     ports:
       - 8090:8090
     restart: unless-stopped
+
+    readarr:
+      image: hotio/readarr
+      container_name: readarr
+      environment:
+        - PUID=1000
+        - PGID=1000
+        - TZ=America/Chicago
+      volumes:
+        - /docker/mylar/config:/config
+        - /mnt/nas/Library/:/library
+        - /mnt/nas/Downloads/nzb:/downloadsnzb
+        - /mnt/nas/Downloads/Complete:/downloadstor
+      network_mode: DockerInternal
+      ports:
+        - 8787:8787
+      restart: unless-stopped
