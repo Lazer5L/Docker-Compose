@@ -1,0 +1,17 @@
+version: "3"
+services:
+  code-server:
+    image: linuxserver/code-server
+    container_name: code-server
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+      #- PASSWORD=password #optional
+      #- SUDO_PASSWORD=password #optional
+    volumes:
+      - /docker/vscode/config:/config
+    network_mode: DockerInternal
+    ports:
+      - 8443:8443
+    restart: unless-stopped
