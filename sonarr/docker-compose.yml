@@ -95,7 +95,7 @@ services:
       - PGID=1000
       - TZ=America/Chicago
     volumes:
-      - /docker/mylar/config:/config
+      - /docker/readarr/config:/config
       - /mnt/nas/Library/:/library
       - /mnt/nas/Downloads/nzb:/downloadsnzb
       - /mnt/nas/Downloads/Complete:/downloadstor
