@@ -13,5 +13,5 @@ services:
       - /docker/vscode/config:/config
     network_mode: DockerInternal
     ports:
-      - 9443:9443
+      - 8443:8443
     restart: unless-stopped
