@@ -6,7 +6,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Europe/London
+      - TZ=America/Chicago
       - UMASK_SET=022 #optional
       - CLI_ARGS= #optional
     volumes:
@@ -24,12 +24,12 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Europe/London
+      - TZ=America/Chicago
       - DOCKER_MODS=linuxserver/calibre-web:calibre
     volumes:
       - /docker/calibre-web/config:/config
       - /mnt/nas/Library/Books:/books
-      - docker/calibre/Calibre\ Library/:/library
+      - "/docker/calibre/Calibre\ Library/:/library"
     network_mode: DockerInternal
     ports:
       - 8083:8083
