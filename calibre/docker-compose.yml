@@ -11,7 +11,7 @@ services:
       - CLI_ARGS= #optional
     volumes:
       - /docker/calibre/config:/config
-      - /mnt/nas/library/books:/books
+      - /mnt/nas/Library/Books:/books
     network_mode: DockerInternal
     ports:
       - 8080:8080
@@ -28,7 +28,7 @@ services:
       - DOCKER_MODS=linuxserver/calibre-web:calibre
     volumes:
       - /docker/calibre-web/config:/config
-      - /mnt/nas/library/books:/books
+      - /mnt/nas/Library/Books:/books
     network_mode: DockerInternal
     ports:
       - 8083:8083
