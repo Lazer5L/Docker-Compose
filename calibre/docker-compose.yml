@@ -29,7 +29,7 @@ services:
     volumes:
       - /docker/calibre-web/config:/config
       - /mnt/nas/Library/Books:/books
-      - "/docker/calibre/Calibre\ Library/:/library"
+      - "/docker/calibre/config/Calibre\ Library/:/library"
     network_mode: DockerInternal
     ports:
       - 8083:8083
