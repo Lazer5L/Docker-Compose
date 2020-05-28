@@ -1,0 +1,35 @@
+version: "2.1"
+services:
+  calibre:
+    image: linuxserver/calibre
+    container_name: calibre
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - UMASK_SET=022 #optional
+      - CLI_ARGS= #optional
+    volumes:
+      - /docker/calibre/config:/config
+      - /mnt/nas/library/books:/books
+    network_mode: DockerInternal
+    ports:
+      - 8080:8080
+      - 8081:8081
+    restart: unless-stopped
+    
+  calibre-web:
+    image: linuxserver/calibre-web
+    container_name: calibre-web
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - DOCKER_MODS=linuxserver/calibre-web:calibre
+    volumes:
+      - /docker/calibre-web/config:/config
+      - /mnt/nas/library/books:/books
+    network_mode: DockerInternal
+    ports:
+      - 8083:8083
+    restart: unless-stopped
