@@ -11,7 +11,7 @@ services:
       #- SUDO_PASSWORD=password #optional
     volumes:
       - /docker/vscode/config:/config
-      - /docker/ssh/acme:/ssl
+      - /docker/ssh/acme:/config/.ssh/
     network_mode: DockerInternal
     ports:
       - 8443:8443

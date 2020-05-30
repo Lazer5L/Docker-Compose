@@ -103,3 +103,20 @@ services:
     ports:
       - 8787:8787
     restart: unless-stopped
+
+  lazylibrarian:
+    image: linuxserver/lazylibrarian
+    container_name: lazylibrarian
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+      - DOCKER_MODS=linuxserver/calibre-web:calibre #optional
+    volumes:
+      - /docker/lazylibrarian/config:/config
+      - /mnt/nas/Library/:/library
+      - /mnt/nas/Downloads/nzb:/downloadsnzb
+      - /mnt/nas/Downloads/Complete:/downloadstor
+    ports:
+      - 5299:5299
+    restart: unless-stopped
