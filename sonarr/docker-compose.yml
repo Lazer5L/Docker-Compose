@@ -115,6 +115,7 @@ services:
     volumes:
       - /docker/lazylibrarian/config:/config
       - /mnt/nas/Library/:/library
+      - /mnt/nas/Downloads/nzb/nzb:/watch
       - /mnt/nas/Downloads/nzb:/downloadsnzb
       - /mnt/nas/Downloads/Complete:/downloadstor
     ports:
