@@ -20,7 +20,7 @@ git --git-dir=/Docker-Compose/.git --work-tree=/Docker-Compose pull
 Do_Compose "pull"
 
 #Notify Discord
-curl -H "Content-Type: application/json" -X POST -d '{"DockerBot": "#general", "content": "Docker is being restarted. Services such as Ombit will be down."}' 'https://discordapp.com/api/webhooks/732244627842793543/pz0yw2i0vedIQoz7TJpGvPUUTFO_vdQvtu_blS9-yeWbzXb8m6FdNnAdFNRLSkqrv9tJ'
+curl -H "Content-Type: application/json" -X POST -d '{"DockerBot": "#general", "content": "Docker is being restarted. Services such as Ombi will be down."}' 'https://discordapp.com/api/webhooks/732244627842793543/pz0yw2i0vedIQoz7TJpGvPUUTFO_vdQvtu_blS9-yeWbzXb8m6FdNnAdFNRLSkqrv9tJ'
 
 #Stop running containers
 Do_Compose "stop"
@@ -40,4 +40,4 @@ Do_Compose "up -d"
 docker image prune -f
 
 #Notify Discord
-curl -H "Content-Type: application/json" -X POST -d '{"DockerBot": "#general", "content": "Docker is starting. Services such as Ombit will be restored in 2 minutes."}' 'https://discordapp.com/api/webhooks/732244627842793543/pz0yw2i0vedIQoz7TJpGvPUUTFO_vdQvtu_blS9-yeWbzXb8m6FdNnAdFNRLSkqrv9tJ'
+curl -H "Content-Type: application/json" -X POST -d '{"DockerBot": "#general", "content": "Docker is starting. Services such as Ombi will be restored in 2 minutes."}' 'https://discordapp.com/api/webhooks/732244627842793543/pz0yw2i0vedIQoz7TJpGvPUUTFO_vdQvtu_blS9-yeWbzXb8m6FdNnAdFNRLSkqrv9tJ'
