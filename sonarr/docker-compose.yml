@@ -118,6 +118,7 @@ services:
       - /mnt/nas/Downloads/nzb/nzb:/watch
       - /mnt/nas/Downloads/nzb:/downloadsnzb
       - /mnt/nas/Downloads/Complete:/downloadstor
+    network_mode: DockerInternal
     ports:
       - 5299:5299
     restart: unless-stopped
