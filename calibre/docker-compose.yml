@@ -1,7 +1,7 @@
 version: "2.1"
 services:
   calibre:
-    image: linuxserver/calibre
+    image: ghcr.io/linuxserver/calibre
     container_name: calibre
     environment:
       - PUID=1000
@@ -19,7 +19,7 @@ services:
     restart: unless-stopped
     
   calibre-web:
-    image: linuxserver/calibre-web
+    image: ghcr.io/linuxserver/calibre-web
     container_name: calibre-web
     environment:
       - PUID=1000
