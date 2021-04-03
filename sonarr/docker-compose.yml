@@ -19,7 +19,7 @@ services:
     restart: unless-stopped
 
   radarr:
-      image: linuxserver/radarr
+      image: ghcr.io/linuxserver/radarr
       container_name: radarr
       environment:
         - PUID=1000
@@ -37,7 +37,7 @@ services:
       restart: unless-stopped
 
   lidarr:
-      image: linuxserver/lidarr
+      image: ghcr.io/linuxserver/lidarr
       container_name: lidarr
       environment:
         - PUID=1000
@@ -55,7 +55,7 @@ services:
       restart: unless-stopped
       
   jackett:
-    image: linuxserver/jackett
+    image: ghcr.io/linuxserver/jackett
     container_name: jackett
     environment:
       - PUID=1000
@@ -71,7 +71,7 @@ services:
     restart: unless-stopped
 
   mylar:
-    image: linuxserver/mylar
+    image: ghcr.io/linuxserver/mylar
     container_name: mylar
     environment:
       - PUID=1000
@@ -105,7 +105,7 @@ services:
     restart: unless-stopped
 
   lazylibrarian:
-    image: linuxserver/lazylibrarian
+    image: ghcr.io/linuxserver/lazylibrarian
     container_name: lazylibrarian
     environment:
       - PUID=1000
