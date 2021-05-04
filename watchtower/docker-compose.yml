@@ -6,5 +6,5 @@ services:
     network_mode: DockerInternal
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-#     - /root/.docker/config.json:/config.json
+     - /docker/watchetower/.docker/config.json:/config.json
     command: --schedule "0 0 5 * * *" --cleanup
