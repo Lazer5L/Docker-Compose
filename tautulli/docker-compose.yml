@@ -10,6 +10,7 @@ services:
     volumes:
       - /docker/tautulli:/config
       - /docker/tautulli/logs:/logs
+      - /mnt/nas/:/nas
     network_mode: DockerInternal
     ports:
       - 8181:8181
