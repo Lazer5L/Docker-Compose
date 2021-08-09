@@ -3,9 +3,13 @@ services:
   homeassistant:
     container_name: homeassistant
     image: "ghcr.io/home-assistant/home-assistant:stable"
+#    environment:
+#      - DISABLE_JEMALLOC: true
     volumes:
       - /docker/home-assistant/config:/config
       - /etc/localtime:/etc/localtime:ro
     restart: unless-stopped
     privileged: true
     network_mode: host
+#    devices:
+#      - /dev/ttyUSB0:/dev/ttyUSB0
