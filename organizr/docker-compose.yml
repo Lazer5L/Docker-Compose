@@ -1,7 +1,7 @@
 version: "3"
 services:
   muximux:
-    image: organizr/organizr
+    image: organizr/organizr:latest
     container_name: organizr
     environment:
       - PUID=1000
