@@ -1,0 +1,16 @@
+version: "3"
+services:
+  muximux:
+    image: organizr/organizr
+    container_name: organizr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+    volumes:
+      - /docker/organizr/config:/config
+    network_mode: DockerInternal
+    ports:
+      - 8880:80
+      - 8443:443
+    restart: unless-stopped
