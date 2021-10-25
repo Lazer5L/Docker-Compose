@@ -69,6 +69,22 @@ services:
     ports:
       - 9117:9117
     restart: unless-stopped
+    
+      prowlarr:
+    image: ghcr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+      - RUN_OPTS=run options here #optional
+    volumes:
+      - /docker/prowlarr/config:/config
+      - /mnt/nas/Downloads/:/downloads
+    network_mode: DockerInternal
+    ports:
+      - 9696:9696
+    restart: unless-stopped
 
 #  mylar:
 #    image: ghcr.io/linuxserver/mylar
