@@ -71,13 +71,12 @@ services:
     restart: unless-stopped
     
   prowlarr:
-    image: ghcr.io/linuxserver/prowlarr:latest
+    image: ghcr.io/linuxserver/prowlarr:develop
     container_name: prowlarr
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=America/Chicago
-      - RUN_OPTS=run options here #optional
     volumes:
       - /docker/prowlarr/config:/config
       - /mnt/nas/Downloads/:/downloads
