@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 function Do_Compose () { 
     # Each time you find docker-compose.yml run action using the set varilable
