@@ -68,7 +68,7 @@ echo -e "\n Enter - Exit"
 echo -e "\n What would you like to perform?:"
 read CHOICE
 
-Case CHOICE in
+case $CHOICE in
     1) # Full Pull, Stop, Backup and Start
         Do_Pull
         Do_Backup
