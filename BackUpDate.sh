@@ -56,7 +56,7 @@ function Do_Start() {
     docker image prune -f
 
     #Notify Discord
-    echo -e "\n - Notifying Discord'
+    echo -e "\n - Notifying Discord"
     curl -H "Content-Type: application/json" -X POST -d '{"DockerBot": "#general", "content": "Docker is starting. Services such as Ombi will be restored in 2 minutes."}' 'https://discordapp.com/api/webhooks/732244627842793543/pz0yw2i0vedIQoz7TJpGvPUUTFO_vdQvtu_blS9-yeWbzXb8m6FdNnAdFNRLSkqrv9tJ'
 } #End Dp_Start Function
 
