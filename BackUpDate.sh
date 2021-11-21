@@ -15,11 +15,11 @@ DockerFolder="/Docker-Compose/*" #Location of Docker-Compose
 Compose="docker-compose.yml" #Compose file used
 
 #Pull latest Git merges
-echo \n Reaching out to GIT
+echo -n Reaching out to GIT
 git --git-dir=/Docker-Compose/.git --work-tree=/Docker-Compose pull
 
-#Pull latest versions of containers
 function Do_Pull() {
+    #Pull latest versions of containers
     echo \n Pulling Docker images
     Do_Compose "pull"
 } # End Do_Pull function
@@ -59,10 +59,10 @@ function Do_Start() {
 } #End Dp_Start Function
 
 echo -n BackUpDate.sh -n-n
-echo -n 1) Full Pull, Stop, Backup and Start
-echo -n 2) Stop Backup and Start
-echo -n 3) Start Only
-echo -n Enter) Exit
+echo -n '1) Full Pull, Stop, Backup and Start'
+echo -n '2) Stop Backup and Start'
+echo -n '3) Start Only'
+echo -n 'Enter) Exit'
 echo -n What would you like to perform?:
 read CHOICE
 
