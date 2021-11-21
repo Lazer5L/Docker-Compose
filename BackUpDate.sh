@@ -61,10 +61,10 @@ function Do_Start() {
 } #End Dp_Start Function
 
 echo -e "\n BackUpDate.sh \n\n"
-echo -e "\n 1) Full Pull, Stop, Backup and Start"
-echo -e "\n 2) Stop Backup and Start"
-echo -e "\n 3) Start Only"
-echo -e "\n Enter) Exit"
+echo -e "\n 1 - Full Pull, Stop, Backup and Start"
+echo -e "\n 2 - Stop Backup and Start"
+echo -e "\n 3 - Start Only"
+echo -e "\n Enter - Exit"
 echo -e "\n What would you like to perform?:"
 read CHOICE
 
