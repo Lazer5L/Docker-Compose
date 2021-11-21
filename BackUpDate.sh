@@ -15,7 +15,7 @@ DockerFolder="/Docker-Compose/*" #Location of Docker-Compose
 Compose="docker-compose.yml" #Compose file used
 
 #Pull latest Git merges
-echo -n Reaching out to GIT
+echo -e "-n Reaching out to GIT"
 git --git-dir=/Docker-Compose/.git --work-tree=/Docker-Compose pull
 
 function Do_Pull() {
