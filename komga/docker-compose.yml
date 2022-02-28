@@ -1,0 +1,17 @@
+
+version: "2.1"
+services:
+  komga:
+    image: gotson/komga
+    container_name: komga
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+    volumes:
+      - /docker/komga/config:/config
+      - /mnt/nas/Library/Comics:/comics
+    network_mode: DockerInternal
+    ports:
+      - 8011:8080
+    restart: unless-stopped
