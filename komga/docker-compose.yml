@@ -8,6 +8,7 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=America/Chicago
+      - JAVA_TOOL_OPTIONS=-Xmx1g
     volumes:
       - /docker/komga/config:/config
       - /mnt/nas/Library/Comics:/comics
