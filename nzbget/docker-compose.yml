@@ -1,7 +1,7 @@
 version: '3'
 services:
   nzbget:
-    image: ghcr.io/linuxserver/nzbget:latest
+    image: lscr.io/linuxserver/nzbget:latest
     container_name: nzbget
     environment:
       - PUID=1000
