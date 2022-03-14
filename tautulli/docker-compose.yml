@@ -1,7 +1,7 @@
 version: "3"
 services:
   tautulli:
-    image: ghcr.io/linuxserver/tautulli
+    image: lscr.io/linuxserver/tautulli
     container_name: tautulli
     environment:
       - PUID=1000
