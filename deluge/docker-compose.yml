@@ -3,7 +3,7 @@
 version: '3'
 services:
   deluge:
-    image: ghcr.io/linuxserver/deluge:latest
+    image: lscr.io/linuxserver/deluge:latest
     container_name: deluge
     restart: unless-stopped
     environment:
