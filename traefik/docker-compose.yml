@@ -12,7 +12,18 @@ services:
       - /mnt/nas/bk/Traefik/traefik.toml:/traefik.toml
       - /mnt/nas/bk/Traefik/traefik_dynamic.toml:/traefik_dynamic.toml
       - /mnt/nas/bk/Traefik/acme.json:/acme.json
-    network_mode: web
+      - /mnt/nas/bk/Traefik/traefik.yml:/etc/traefik/traefik.yml
+      - /mnt/nas/bk/Traefik/letsencrypt:/letsencrypt
+      - /mnt/nas/bk/Traefik/logs:/logs
+    network_mode: DockerExternal
+    labels:
+      traefik.http.routers.traefik.tls=true
+      traefik.http.routers.traefik.rule=Host(`traefik.tuckeredoutbert.com`)
+      traefik.http.routers.traefik.tls.certresolver=le
+      traefik.http.routers.traefik.tls.domains[0].main=tuckeredoutbert.com
+      traefik.http.routers.traefik.tls.domains[0].sans=*.tuckeredoutbert.com,turkeredoutbert.com
+      traefik.http.routers.traefik.entrypoints=websecure
+      traefik.docker.network=DockerExternal
     ports:
       - 80:80
       - 443:443
