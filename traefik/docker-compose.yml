@@ -19,7 +19,7 @@ services:
     labels:
       - traefik.http.routers.traefik.tls=true
       - traefik.http.routers.traefik.rule=Host(`traefik.tuckeredoutbert.com`)
-      - traefik.http.routers.traefik.tls.certresolver=le
+      - traefik.http.routers.traefik.tls.certresolver=lets-encrypt
       - traefik.http.routers.traefik.tls.domains[0].main=tuckeredoutbert.com
       - traefik.http.routers.traefik.tls.domains[0].sans=*.tuckeredoutbert.com,turkeredoutbert.com
       - traefik.http.routers.traefik.entrypoints=websecure
