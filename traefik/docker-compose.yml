@@ -8,7 +8,7 @@ services:
       - PGID=1000
       - TZ=America/Chicago
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/run/docker.sock:/var/run/docker.sock:ro
       #- /mnt/nas/bk/Traefik/traefik.toml:/traefik.toml
       - /mnt/nas/bk/Traefik/traefik.yml:/etc/traefik/traefik.yml
       #- /mnt/nas/bk/Traefik/traefik_dynamic.toml:/traefik_dynamic.toml
