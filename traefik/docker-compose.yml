@@ -9,10 +9,11 @@ services:
       - TZ=America/Chicago
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /mnt/nas/bk/Traefik/traefik.toml:/traefik.toml
+      #- /mnt/nas/bk/Traefik/traefik.toml:/traefik.toml
+      - /mnt/nas/bk/Traefik/traefik.yml:/etc/traefik/traefik.yml
       - /mnt/nas/bk/Traefik/traefik_dynamic.toml:/traefik_dynamic.toml
       - /mnt/nas/bk/Traefik/acme.json:/acme.json
-      #- /mnt/nas/bk/Traefik/traefik.yml:/etc/traefik/traefik.yml
+
       - /mnt/nas/bk/Traefik/letsencrypt:/letsencrypt
       #- /mnt/nas/bk/Traefik/logs:/logs
     network_mode: DockerExternal
@@ -22,9 +23,16 @@ services:
       - traefik.http.routers.traefik.tls.certresolver=lets-encrypt
       - traefik.http.routers.traefik.tls.domains[0].main=tuckeredoutbert.com
       - traefik.http.routers.traefik.tls.domains[0].sans=*.tuckeredoutbert.com,turkeredoutbert.com
-      - traefik.http.routers.traefik.entrypoints=websecure
+      - traefik.http.routers.traefik.entrypoints=web-secure
       - traefik.docker.network=DockerExternal
+    networks:
+     DockerExternal:
     ports:
       - 80:80
       - 443:443
+      - 8088:8880
+networks:
+  DockerExternal:
+    external: true
+
     restart: unless-stopped 
