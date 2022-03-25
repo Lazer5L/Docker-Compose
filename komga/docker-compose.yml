@@ -14,9 +14,9 @@ services:
       - /mnt/nas/Library/Comics:/comics
     label:
       - traefik.enable=true
-      - traefik.http.routers.whoami.rule=Host(`komga.tuckeredoutbert.com`)  
-      - traefik.http.routers.whoami.entrypoints=web-secure
-      - traefik.http.routers.whoami.tls.certresolver=lets-encrypt
+      - traefik.http.routers.komga.rule=Host(`komga.tuckeredoutbert.com`)  
+      - traefik.http.routers.komga.entrypoints=web-secure
+      - traefik.http.routers.komga.tls.certresolver=lets-encrypt
       - traefik.docker.network=DockerExternal
     #networks:
     #  DockerExternal:
