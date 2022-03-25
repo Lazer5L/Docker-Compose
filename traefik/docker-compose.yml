@@ -33,5 +33,3 @@ services:
 networks:
   DockerExternal:
     external: true
-  DockerInternal:
-    external: true
