@@ -9,9 +9,7 @@ services:
       - TZ=America/Chicago
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      #- /mnt/nas/bk/Traefik/traefik.toml:/traefik.toml
       - /mnt/nas/bk/Traefik/traefik.yml:/etc/traefik/traefik.yml
-      #- /mnt/nas/bk/Traefik/traefik_dynamic.toml:/traefik_dynamic.toml
       - /mnt/nas/bk/Traefik/acme.json:/acme.json
       - /mnt/nas/bk/Traefik/letsencrypt:/letsencrypt
       - /mnt/nas/bk/Traefik/logs:/logs
