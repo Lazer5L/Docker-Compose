@@ -12,13 +12,20 @@ services:
       - FIELD_ENCRYPTION_KEY=qjq4ObsXMqiqQyfKgD-jjEGm4ep8RaHKGRg4ohGCi1A=
       - DJANGO_DB_URL=postgres://postgres@db:5432/postgres
       - DJANGO_ALLOWED_HOSTS=*
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.guac.rule=Host(`guac.tuckeredoutbert.com`)  
+      - traefik.http.routers.guac.entrypoints=web-secure
+      - traefik.http.routers.guac.tls.certresolver=lets-encrypt
+      - traefik.docker.network=DockerExternal
     networks:
       - DockerInternal
-    ports:
-      - 10080:80
-      - 10443:443
-    volumes:
-      - /docker/ssh/acme:/ssl
+      - DockerExternal
+    #ports:
+    #  - 10080:80
+    #  - 10443:443
+    #volumes:
+    #  - /docker/ssh/acme:/ssl
   guacd:
     image: guacamole/guacd
     restart: always
@@ -34,4 +41,6 @@ services:
 
 networks:
   DockerInternal:
+    external: true
+  DockerExternal:
     external: true
