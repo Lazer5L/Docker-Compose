@@ -12,7 +12,17 @@ services:
     volumes:
       - /docker/komga/config:/config
       - /mnt/nas/Library/Comics:/comics
-    network_mode: DockerInternal
-    ports:
-      - 8011:8080
+    label:
+      - traefik.enable=true
+      - traefik.http.routers.whoami.rule=Host(`komga.tuckeredoutbert.com`)  
+      - traefik.http.routers.whoami.entrypoints=web-secure
+      - traefik.http.routers.whoami.tls.certresolver=lets-encrypt
+      - traefik.docker.network=DockerExternal
+    #networks:
+    #  DockerExternal:
+    network_mode: 
+      - DockerInternal
+      - DockerExternal
+    #ports:
+    #  - 8011:8080
     restart: unless-stopped
