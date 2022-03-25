@@ -30,20 +30,6 @@ services:
       - 80:80
       - 443:443
     restart: unless-stopped 
-
-  whoami:
-    image: "traefik/whoami"
-    container_name: "simple-service"
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.whoami.rule=Host(`who.tuckeredoutbert.com`)  
-      - traefik.http.routers.whoami.entrypoints=web-secure
-      - traefik.http.routers.whoami.tls.certresolver=lets-encrypt
-      - traefik.docker.network=DockerExternal
-    networks:
-      DockerExternal:
-      DockerInternal:
-
 networks:
   DockerExternal:
     external: true
