@@ -24,7 +24,7 @@ services:
       - traefik.http.routers.traefik.tls.domains[0].sans=*.tuckeredoutbert.com,turkeredoutbert.com
       - traefik.http.routers.traefik.entrypoints=web-secure
       - traefik.docker.network=DockerExternal
-    env_file: /mnt/nas/bk/traefik/traefik.env  
+    env_file: /mnt/nas/bk/Traefik/traefik.env  
     networks:
       DockerExternal:
     ports:
