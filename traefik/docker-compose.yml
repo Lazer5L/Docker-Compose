@@ -36,7 +36,7 @@ services:
     container_name: "simple-service"
     labels:
       - traefik.enable=true
-      - traefik.http.routers.whoami.rule=Host(`who.tuckeredoutbert.com` || `who`)  # replace gf.cloudwatch.net with you domain name, leave /gf unchanged for now  
+      - traefik.http.routers.whoami.rule=Host(`who.tuckeredoutbert.com`)  
       - traefik.http.routers.whoami.entrypoints=web-secure
       - traefik.http.routers.whoami.tls.certresolver=lets-encrypt
       - traefik.docker.network=DockerExternal
