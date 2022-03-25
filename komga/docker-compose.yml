@@ -12,7 +12,7 @@ services:
     volumes:
       - /docker/komga/config:/config
       - /mnt/nas/Library/Comics:/comics
-    label:
+    labels:
       - traefik.enable=true
       - traefik.http.routers.komga.rule=Host(`komga.tuckeredoutbert.com`)  
       - traefik.http.routers.komga.entrypoints=web-secure
