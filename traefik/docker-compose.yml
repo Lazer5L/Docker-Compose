@@ -18,10 +18,10 @@ services:
     network_mode: DockerExternal
     labels:
       - traefik.http.routers.traefik.tls=true
-      - traefik.http.routers.traefik.rule=Host(`traefik.tuckeredoutbert.com`)
+      - traefik.http.routers.traefik.rule=Host(`traefik.tuckeredoutbert.com` || 'traefik')
       - traefik.http.routers.traefik.tls.certresolver=lets-encrypt
-      - traefik.http.routers.traefik.tls.domains[0].main=tuckeredoutbert.com
-      - traefik.http.routers.traefik.tls.domains[0].sans=*.tuckeredoutbert.com,turkeredoutbert.com
+      #- traefik.http.routers.traefik.tls.domains[0].main=tuckeredoutbert.com
+      #- traefik.http.routers.traefik.tls.domains[0].sans=*.tuckeredoutbert.com,turkeredoutbert.com
       - traefik.http.routers.traefik.entrypoints=web-secure
       - traefik.docker.network=DockerExternal
     networks:
@@ -29,7 +29,6 @@ services:
     ports:
       - 80:80
       - 443:443
-      - 8088:8880
     restart: unless-stopped 
     
 networks:
