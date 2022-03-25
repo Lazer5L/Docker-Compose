@@ -20,9 +20,7 @@ services:
       - traefik.docker.network=DockerExternal
     #networks:
     #  DockerExternal:
-    network_mode: 
-      - DockerInternal
-      - DockerExternal
+    network_mode: DockerInternal
     #ports:
     #  - 8011:8080
     restart: unless-stopped
