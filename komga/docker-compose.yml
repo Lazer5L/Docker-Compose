@@ -18,9 +18,10 @@ services:
       - traefik.http.routers.komga.entrypoints=web-secure
       - traefik.http.routers.komga.tls.certresolver=lets-encrypt
       - traefik.docker.network=DockerExternal
-    #networks:
-    #  DockerExternal:
-    network_mode: DockerInternal
+    networks:
+      - name: DockerExternal
+      - name: DockerInternal
+    #network_mode: DockerInternal
     #ports:
     #  - 8011:8080
     restart: unless-stopped
