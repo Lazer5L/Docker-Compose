@@ -21,11 +21,6 @@ services:
     networks:
       - DockerInternal
       - DockerExternal
-    #ports:
-    #  - 10080:80
-    #  - 10443:443
-    #volumes:
-    #  - /docker/ssh/acme:/ssl
   guacd:
     image: guacamole/guacd
     restart: always
