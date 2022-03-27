@@ -21,10 +21,8 @@ services:
     networks:
       DockerExternal:
       DockerInternal:
-    #network_mode: DockerInternal
-    #ports:
-    #  - 8011:8080
     restart: unless-stopped
+    
 networks:
   DockerExternal:
     external: true
