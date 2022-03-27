@@ -8,12 +8,8 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=America/Chicago
-    #network_mode: DockerInternal  
-    #ports:
-    #  - 80:3579
     volumes:
       - /docker/ombi/config:/config
-      #- /docker/ssh/acme:/ssl
     labels:
       - traefik.enable=true
       - traefik.http.routers.ombi.rule=Host(`ombi.tuckeredoutbert.com`)  
@@ -23,9 +19,6 @@ services:
     networks:
       DockerExternal:
       DockerInternal:
-    #network_mode: DockerInternal
-    #ports:
-    #  - 8011:8080
     restart: unless-stopped
 networks:
   DockerExternal:
