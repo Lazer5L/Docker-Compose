@@ -1,7 +1,7 @@
 version: '3.5'
 services:
   traefik:
-    image: "traefik:v2.6.2"
+    image: traefik:v2.6.2
     container_name: traefik
     environment:
       - PUID=1000
@@ -16,7 +16,7 @@ services:
     network_mode: DockerExternal
     labels:
       - traefik.http.routers.traefik.tls=true
-      - traefik.http.routers.traefik.rule=Host(`traefik.tuckeredoutbert.com` || 'traefik')
+      - traefik.http.routers.traefik.rule=Host(`traefik.tuckeredoutbert.com`)
       - traefik.http.routers.traefik.tls.certresolver=lets-encrypt
       - traefik.http.routers.traefik.tls.domains[0].main=tuckeredoutbert.com
       - traefik.http.routers.traefik.tls.domains[0].sans=*.tuckeredoutbert.com,turkeredoutbert.com
