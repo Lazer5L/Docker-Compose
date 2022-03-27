@@ -4,7 +4,6 @@ services:
   ombi:
     image: lscr.io/linuxserver/ombi:latest
     container_name: ombi
-    restart: unless-stopped
     environment:
       - PUID=1000
       - PGID=1000
