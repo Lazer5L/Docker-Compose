@@ -1,7 +1,7 @@
 version: '3.5'
 services:
   traefik:
-    image: traefik:v2.6.2
+    image: traefik:latest
     container_name: traefik
     environment:
       - PUID=1000
