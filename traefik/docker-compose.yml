@@ -19,7 +19,7 @@ services:
       - traefik.http.routers.traefik.rule=Host(`traefik.tuckeredoutbert.com`)
       - traefik.http.routers.traefik.tls.certresolver=lets-encrypt
       - traefik.http.routers.traefik.tls.domains.main=tuckeredoutbert.com
-      - traefik.http.routers.traefik.tls.domains.sans=*.tuckeredoutbert.com,turkeredoutbert.com
+      - traefik.http.routers.traefik.tls.domains.sans=*.tuckeredoutbert.com,tuckeredoutbert.com
       - traefik.http.routers.traefik.entrypoints=web-secure
       - traefik.docker.network=DockerExternal
     env_file: /mnt/nas/bk/Traefik/traefik.env  
