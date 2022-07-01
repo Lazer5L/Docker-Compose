@@ -20,7 +20,7 @@ services:
 
         # HTTP
         - "SFTPGO_HTTPD__BINDINGS__0__PORT=2222"
-        #- "SFTPGO_HTTPD__BINDINGS__0__PROXY_ALLOWED=169.254.0.0/29"
+        - "SFTPGO_HTTPD__BINDINGS__0__PROXY_ALLOWED=0.0.0.0"
 
         # Telemetry
         - "SFTPGO_TELEMETRY__BIND_PORT=3333"
@@ -31,7 +31,7 @@ services:
 
         # WebDAV
         - "SFTPGO_WEBDAVD__BINDINGS__0__PORT=4444"
-       # - "SFTPGO_WEBDAVD__BINDINGS__0__PROXY_ALLOWED=169.254.0.0/29"
+        - "SFTPGO_WEBDAVD__BINDINGS__0__PROXY_ALLOWED=0.0.0.0"
 
         # Defender (similar concept as Fail2ban) — see https://github.com/drakkan/sftpgo/blob/main/docs/defender.md
         - "SFTPGO_COMMON__DEFENDER__ENABLED=true"
