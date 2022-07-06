@@ -1,7 +1,7 @@
 version: '3.5'
 services:
   sftpgo:
-    image: drakkan/sftpgo:v2-alpine
+    image: drakkan/sftpgo:latest
     container_name: sftpgo
     restart: unless-stopped
     network_mode: DockerInternal
