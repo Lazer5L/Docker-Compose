@@ -3,6 +3,11 @@ services:
   watchtower:
     image: v2tec/watchtower
     container_name: watchtower
+    logging:
+      driver: "json-file"
+      options:
+        max-file: 5
+        max-size: 1m
     restart: unless-stopped
     environment:
       #- TZ=America/Chicago
