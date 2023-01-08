@@ -32,10 +32,10 @@ services:
         - TZ=America/Chicago
         - UMASK_SET=022 #optional
       logging:
-      driver: "json-file"
-      options:
-        max-file: 5
-        max-size: 1m
+        driver: "json-file"
+        options:
+          max-file: 5
+          max-size: 1m
       volumes:
         - /docker/radarr/config:/config
         - /mnt/nas/Movies/:/movies
@@ -54,6 +54,11 @@ services:
         - PGID=1000
         - TZ=America/Chicago
         - UMASK_SET=022 #optional
+       logging:
+        driver: "json-file"
+        options:
+          max-file: 5
+          max-size: 1m
       volumes:
         - /docker/lidarr/config:/config
         - /mnt/nas/Music:/music
