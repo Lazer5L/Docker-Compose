@@ -54,7 +54,7 @@ services:
         - PGID=1000
         - TZ=America/Chicago
         - UMASK_SET=022 #optional
-       logging:
+      logging:
         driver: "json-file"
         options:
           max-file: 5
