@@ -8,6 +8,11 @@ services:
       - PGID=1000
       - TZ=America/Chicago
       - UMASK_SET=022 #optional
+    logging:
+      driver: "json-file"
+      options:
+        max-file: 5
+        max-size: 1m
     volumes:
       - /docker/sonarr/config:/config
       - "/mnt/nas/TV\ Shows/:/tv"
@@ -26,6 +31,11 @@ services:
         - PGID=1000
         - TZ=America/Chicago
         - UMASK_SET=022 #optional
+      logging:
+      driver: "json-file"
+      options:
+        max-file: 5
+        max-size: 1m
       volumes:
         - /docker/radarr/config:/config
         - /mnt/nas/Movies/:/movies
@@ -54,21 +64,21 @@ services:
         - 8686:8686
       restart: unless-stopped
       
-  jackett:
-    image: lscr.io/linuxserver/jackett:latest
-    container_name: jackett
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Chicago
-      - RUN_OPTS=run options here #optional
-    volumes:
-      - /docker/jackett/config:/config
-      - /mnt/nas/Downloads/:/downloads
-    network_mode: DockerInternal
-    ports:
-      - 9117:9117
-    restart: unless-stopped
+  #jackett:
+  #  image: lscr.io/linuxserver/jackett:latest
+  #  container_name: jackett
+  #  environment:
+  #    - PUID=1000
+  #    - PGID=1000
+  #    - TZ=America/Chicago
+  #    - RUN_OPTS=run options here #optional
+  #  volumes:
+  #    - /docker/jackett/config:/config
+  #    - /mnt/nas/Downloads/:/downloads
+  #  network_mode: DockerInternal
+  #  ports:
+  #    - 9117:9117
+  #  restart: unless-stopped
     
   prowlarr:
     image: lscr.io/linuxserver/prowlarr:develop
@@ -77,6 +87,11 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=America/Chicago
+    logging:
+      driver: "json-file"
+      options:
+        max-file: 5
+        max-size: 1m
     volumes:
       - /docker/prowlarr/config:/config
       - /mnt/nas/Downloads/:/downloads
@@ -85,22 +100,22 @@ services:
       - 9696:9696
     restart: unless-stopped
 
-  mylar3:
-    image: lscr.io/linuxserver/mylar3
-    container_name: mylar3
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Chicago
-    volumes:
-      - /docker/mylar/config:/config
-      - /mnt/nas/Library/Comics:/comics
-      - /mnt/nas/Downloads/nzb:/downloadsnzb
-      - /mnt/nas/Downloads/Complete:/downloadstor
-    network_mode: DockerInternal
-    ports:
-      - 8090:8090
-    restart: unless-stopped
+ # mylar3:
+ #   image: lscr.io/linuxserver/mylar3
+ #   container_name: mylar3
+ #   environment:
+ #     - PUID=1000
+ #     - PGID=1000
+ #     - TZ=America/Chicago
+ #   volumes:
+ #     - /docker/mylar/config:/config
+ #     - /mnt/nas/Library/Comics:/comics
+ #     - /mnt/nas/Downloads/nzb:/downloadsnzb
+ #     - /mnt/nas/Downloads/Complete:/downloadstor
+ #   network_mode: DockerInternal
+ #   ports:
+ #     - 8090:8090
+ #   restart: unless-stopped
 
 #  readarr:
 #    image: hotio/readarr:unstable
@@ -127,6 +142,11 @@ services:
       - PGID=1000
       - TZ=America/Chicago
       - DOCKER_MODS=linuxserver/calibre-web:calibre #optional
+    logging:
+      driver: "json-file"
+      options:
+        max-file: 5
+        max-size: 1m
     volumes:
       - /docker/lazylibrarian/config:/config
       - /mnt/nas/Library/:/library
