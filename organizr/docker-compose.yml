@@ -1,12 +1,17 @@
 version: "3"
 services:
-  muximux:
+  organizr:
     image: organizr/organizr:latest
     container_name: organizr
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=America/Chicago
+    logging:
+      driver: "json-file"
+      options:
+        max-file: 5
+        max-size: 1m
     volumes:
       - /docker/organizr/config:/config
     network_mode: DockerInternal
