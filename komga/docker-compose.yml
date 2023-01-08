@@ -9,6 +9,11 @@ services:
       - PGID=1000
       - TZ=America/Chicago
       - JAVA_TOOL_OPTIONS=-Xmx2g
+    logging:
+      driver: "json-file"
+      options:
+        - max-file: 5
+        - max-size: 1m
     volumes:
       - /docker/komga/config:/config
       - /mnt/nas/Library/Comics:/comics
