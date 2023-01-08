@@ -31,6 +31,11 @@ services:
       - PGID=1000
       - TZ=America/Chicago
       - DOCKER_MODS=linuxserver/calibre-web:calibre
+    logging:
+      driver: "json-file"
+      options:
+        - max-file: 5
+        - max-size: 1m
     volumes:
       - /docker/calibre-web/config:/config
       - /mnt/nas/Library/Books:/books
