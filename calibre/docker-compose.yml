@@ -9,6 +9,11 @@ services:
       - TZ=America/Chicago
       - UMASK_SET=022 #optional
       - CLI_ARGS= #optional
+    logging:
+      driver: "json-file"
+      options:
+        max-file: 5
+        max-size: 1m
     volumes:
       - /docker/calibre/config:/config
       - /mnt/nas/Library/Books:/books
