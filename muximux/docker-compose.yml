@@ -7,6 +7,11 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=America/Chicago
+    logging:
+      driver: "json-file"
+      options:
+        max-file: 5
+        max-size: 1m
     volumes:
       - /docker/muximux/config:/config
     network_mode: DockerInternal
