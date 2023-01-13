@@ -7,7 +7,7 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=America/Chicago
-      - umask=022
+      - UMASK_SET=022 #optional
     logging:
       driver: "json-file"
       options:
@@ -15,8 +15,8 @@ services:
         max-size: 1m
     volumes:
       - /docker/nzbget/config:/config
-      - /mnt/nas/Downloads/nzb/complete:/downloads
-      - /mnt/nas/Downloads/nzb/intermediate:/incomplete-downloads
+      - /mnt/nas/Downloads/nzb/complete:/downloads #optional
+      - /mnt/nas/Downloads/nzb/intermediate:/incomplete-downloads #optional
     network_mode: DockerInternal
     ports:
       - 8080:8080
