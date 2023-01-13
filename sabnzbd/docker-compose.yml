@@ -14,7 +14,7 @@ services:
         max-file: 5
         max-size: 1m
     volumes:
-      - /docker/nzbget/config:/config
+      - /docker/sabnazbd/config:/config
       - /mnt/nas/Downloads/nzb/complete:/downloads #optional
       - /mnt/nas/Downloads/nzb/intermediate:/incomplete-downloads #optional
     network_mode: DockerInternal
