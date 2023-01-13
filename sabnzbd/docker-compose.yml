@@ -1,6 +1,6 @@
 version: '3'
 services:
-  nzbget:
+  sabnzbd:
     image: lscr.io/linuxserver/sabnzbd:latest
     container_name: sabnzbd
     environment:
