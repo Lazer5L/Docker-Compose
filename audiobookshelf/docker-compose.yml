@@ -5,8 +5,8 @@ services:
     ports:
       - 13378:13378
     volumes:
-      - "/mnt/nas/LLibrary/Audio\ Books":/audiobooks
-      #- </path/to/podcasts>:/podcasts
+      - "/mnt/nas/Library/Audio\ Books":/audiobooks
+      - /mnt/nas/Library/podcasts:/podcasts
       - /mnt/nas/audiobookshelf/config:/config
       - /mnt/nas/audiobookshelf/metadata:/metadata
     logging:
