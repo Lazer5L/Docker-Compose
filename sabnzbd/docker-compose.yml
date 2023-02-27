@@ -17,6 +17,7 @@ services:
       - /docker/sabnazbd/config:/config
       - /mnt/nas/Downloads/nzb:/downloads #optional
       - /mnt/nas/Downloads/nzb/intermediate:/incomplete-downloads #optional
+      - /mnt/nas/bk/sabnzbd:/backup
     network_mode: DockerInternal
     ports:
       - 8080:8080
