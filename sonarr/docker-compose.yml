@@ -112,7 +112,7 @@ services:
     restart: unless-stopped
 
   readarr:
-    image: hotio/readarr:unstable
+    image: ghcr.io/hotio/readarr:latest
     container_name: readarr
     environment:
       - PUID=1000
