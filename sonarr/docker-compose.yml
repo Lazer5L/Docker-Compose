@@ -89,22 +89,22 @@ services:
       - 9696:9696
     restart: unless-stopped
 
- # mylar3:
- #   image: lscr.io/linuxserver/mylar3
- #   container_name: mylar3
- #   environment:
- #     - PUID=1000
- #     - PGID=1000
- #     - TZ=America/Chicago
- #   volumes:
- #     - /docker/mylar/config:/config
- #     - /mnt/nas/Library/Comics:/comics
- #     - /mnt/nas/Downloads/nzb:/downloadsnzb
- #     - /mnt/nas/Downloads/Complete:/downloadstor
- #   network_mode: DockerInternal
- #   ports:
- #     - 8090:8090
- #   restart: unless-stopped
+  mylar3:
+    image: lscr.io/linuxserver/mylar3
+    container_name: mylar3
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+    volumes:
+      - /docker/mylar/config:/config
+      - /mnt/nas/Library/Comics:/comics
+      - /mnt/nas/Downloads/nzb:/downloadsnzb
+      - /mnt/nas/Downloads/Complete:/downloadstor
+    network_mode: DockerInternal
+    ports:
+      - 8090:8090
+    restart: unless-stopped
 
   readarr:
     image: hotio/readarr:unstable
