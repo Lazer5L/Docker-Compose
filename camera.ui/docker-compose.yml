@@ -15,11 +15,5 @@ services:
      - "7272:7272"
     volumes:
       - /docker/camera.ui/config:/.camera.ui:rw
-    networks:
-      - services
     network_mode: DockerInternal
     restart: unless-stopped
-
-networks:
-  services:
-    external: false
