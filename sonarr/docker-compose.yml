@@ -18,6 +18,7 @@ services:
       - "/mnt/nas/TV\ Shows/:/tv"
       - /mnt/nas/Downloads/nzb/:/downloadsnzb
       - /mnt/nas/Downloads/Complete/:/downloadstor
+      - /mnt/nas/bk/arrbackup/:/arrbackup
     network_mode: DockerInternal
     ports:
       - 8989:8989
@@ -41,6 +42,7 @@ services:
         - /mnt/nas/Movies/:/movies
         - /mnt/nas/Downloads/nzb:/downloadsnzb
         - /mnt/nas/Downloads/Complete:/downloadstor
+        - /mnt/nas/bk/arrbackup/:/arrbackup
       network_mode: DockerInternal
       ports:
         - 7878:7878
@@ -64,6 +66,7 @@ services:
         - /mnt/nas/Music:/music
         - /mnt/nas/Downloads/nzb:/downloadsnzb
         - /mnt/nas/Downloads/Complete:/downloadstor
+        - /mnt/nas/bk/arrbackup/:/arrbackup
       network_mode: DockerInternal
       ports:
         - 8686:8686
@@ -84,6 +87,7 @@ services:
     volumes:
       - /docker/prowlarr/config:/config
       - /mnt/nas/Downloads/:/downloads
+      - /mnt/nas/bk/arrbackup/:/arrbackup
     network_mode: DockerInternal
     ports:
       - 9696:9696
@@ -106,6 +110,7 @@ services:
       - /mnt/nas/Library/Comics:/comics
       - /mnt/nas/Downloads/nzb:/downloadsnzb
       - /mnt/nas/Downloads/Complete:/downloadstor
+      - /mnt/nas/bk/arrbackup/:/arrbackup
     network_mode: DockerInternal
     ports:
       - 8090:8090
@@ -128,6 +133,7 @@ services:
       - /mnt/nas/Library/:/library
       - /mnt/nas/Downloads/nzb:/downloadsnzb
       - /mnt/nas/Downloads/Complete:/downloadstor
+      - /mnt/nas/bk/arrbackup/:/arrbackup
     network_mode: DockerInternal
     ports:
       - 8787:8787
