@@ -1,4 +1,3 @@
-version: '3.5'
 services:
   traefik:
     image: traefik:latest
@@ -22,7 +21,7 @@ services:
       - /docker/Traefik/acme.json:/acme.json
       - /docker/Traefik/letsencrypt:/letsencrypt
       - /docker/Traefik/logs:/logs
-    network_mode: DockerExternal
+#    network_mode: DockerExternal
     labels:
       - traefik.http.routers.traefik.tls=true
       - traefik.http.routers.traefik.rule=Host(`traefik.tuckeredoutbert.com`)
