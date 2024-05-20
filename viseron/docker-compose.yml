@@ -8,7 +8,7 @@ services:
         max-file: 5
         max-size: 1m
     volumes:
-      - /docker/viawron/recordings:/recordings
+      - /docker/viseron/recordings:/recordings
       - /docker/viseron/config:/config
       - /etc/localtime:/etc/localtime:ro
     network_mode: DockerInternal
