@@ -1,0 +1,17 @@
+services:
+  viseron:
+    image: roflcoopter/viseron:latest
+    container_name: viseron
+    logging:
+      driver: "json-file"
+      options:
+      max-file: 5
+      max-size: 1m
+    volumes:
+      - /docker/viawron/recordings:/recordings
+      - /docker/config:/config
+      - /etc/localtime:/etc/localtime:ro
+    network_mode: DockerInternal
+    ports:
+      - 8888:8888
+      
