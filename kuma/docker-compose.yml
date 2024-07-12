@@ -1,0 +1,14 @@
+services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:1
+    logging:
+      driver: "json-file"
+      options:
+        max-file: 5
+        max-size: 1m
+    volumes:
+      - /docker/kuma/config:/app/data
+    ports:
+      # <Host Port>:<Container Port>
+      - 3001:3001
+    restart: unless-stopped
