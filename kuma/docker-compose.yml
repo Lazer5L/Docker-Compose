@@ -8,6 +8,7 @@ services:
         max-size: 1m
     volumes:
       - /docker/kuma/config:/app/data
+      - /var/run/docker.sock:/var/run/docker.sock
     ports:
       # <Host Port>:<Container Port>
       - 3001:3001
