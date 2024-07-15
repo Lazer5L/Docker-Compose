@@ -1,8 +1,6 @@
-version: '3.5'
 services:
-  sftpgo:
-    image: drakkan/sftpgo:latest
-    container_name: sftpgo
+ sftp:
+    image: atmoz/sftp
     logging:
       driver: "json-file"
       options:
@@ -11,32 +9,9 @@ services:
     restart: unless-stopped
     network_mode: DockerInternal
     ports:
-        - "9922:9922"
-        - "2222:2222"
-        - "3333:3333"
-        - "4444:4444"
-    environment:
-        # Proxy Protocol
-        #- "SFTPGO_COMMON__PROXY_PROTOCOL=2"
-        #- "SFTPGO_COMMON__PROXY_ALLOWED=169.254.0.0/29"
-        # SFTP
-        - "SFTPGO_SFTPD__BINDINGS__0__PORT=9922"
-        # HTTP
-        - "SFTPGO_HTTPD__BINDINGS__0__PORT=2222"
-        # Telemetry
-        - "SFTPGO_TELEMETRY__BIND_PORT=3333"
-        # Uncomment if you want to profile SFTPGo, see https://github.com/drakkan/sftpgo/blob/main/docs/profiling.md
-        # - "SFTPGO_TELEMETRY__ENABLE_PROFILER=true"
-        # WebDAV
-        - "SFTPGO_WEBDAVD__BINDINGS__0__PORT=4444"
-        # Defender (similar concept as Fail2ban) — see https://github.com/drakkan/sftpgo/blob/main/docs/defender.md
-        - "SFTPGO_COMMON__DEFENDER__ENABLED=true"
-        - "SFTPGO_COMMON__DEFENDER__BAN_TIME=30"
-        - "SFTPGO_COMMON__DEFENDER__BAN_TIME_INCREMENT=50"
-        - "SFTPGO_COMMON__DEFENDER__THRESHOLD=5"
-        - "SFTPGO_COMMON__DEFENDER__OBSERVATION_TIME=30"           
+        - "9922:9922"       
     volumes:
-      - /docker/sftp/data:/srv/sftpgo/data
-      - /docker/sftp/backups:/srv/sftpgo/backups
-      - /docker/sftp/config:/var/lib/sftpgo
-      - /mnt/nas:/srv/sftp/nas
+      - /mnt/nas/upload:/home/upload
+      - /docker/sftp/users.conf:/etc/sftp/users.conf:ro \
+      - /docker/sftp/ssh_host_ed25519_key:/etc/ssh/ssh_host_ed25519_key:ro
+      - /docker/sftp/ssh_host_rsa_key:/etc/ssh/ssh_host_rsa_key:ro
