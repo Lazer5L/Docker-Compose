@@ -1,5 +1,5 @@
 services:
- sftp:
+  sftp:
     image: atmoz/sftp
     container_name: sftp
     logging:
@@ -10,9 +10,9 @@ services:
     restart: unless-stopped
     network_mode: DockerInternal
     ports:
-        - "9922:22"       
+      - "9922:22"       
     volumes:
-      - /mnt/nas/upload:/home/$user/upload
+      - /mnt/nas/upload:/home/upload
       - "/mnt/nas/TV Shows":/home/tv:ro
       - /mnt/nas/Movies:/home/movies:ro
       - /mnt/nas/Library:/home/library:ro
