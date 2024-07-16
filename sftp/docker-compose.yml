@@ -9,9 +9,6 @@ services:
         max-size: 1m
     restart: unless-stopped
     network_mode: DockerInternal
-    securityContext:
-      privileged: 
-        - true
     cap_add:
       - SYS_ADMIN
     ports:
