@@ -10,7 +10,7 @@ services:
     restart: unless-stopped
     network_mode: DockerInternal
     ports:
-      - "9922:22"       
+      - "9922:22"
     volumes:
       - /mnt/nas/upload:/home/upload
       - "/mnt/nas/TV Shows":/home/tv:ro
