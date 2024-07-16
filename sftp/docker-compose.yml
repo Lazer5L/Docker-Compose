@@ -15,7 +15,7 @@ services:
       - /docker/sftp/data:/home
       - /mnt/nas/upload:/upload
       - "/mnt/nas/TV\ Shows/:/tv"
-      - /mnt/nas/Movies/:/home/movies
+      - /mnt/nas/Movies/:/movies
       - /mnt/nas/Library:/library
       - /docker/sftp/users.conf:/etc/sftp/users.conf
       - /docker/sftp/ssh_host_ed25519_key:/etc/ssh/ssh_host_ed25519_key:ro
