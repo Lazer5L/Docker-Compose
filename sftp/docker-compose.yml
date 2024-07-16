@@ -12,6 +12,9 @@ services:
         - "9922:22"       
     volumes:
       - /mnt/nas/upload:/home/upload
-      - /docker/sftp/users.conf:/etc/sftp/users.conf:ro \
+      - "/mnt/nas/TV Shows":/home/tv:ro
+      - /mnt/nas/Movies:/home/movies:ro
+      - /mnt/nas/Library:/home/library:ro
+      - /docker/sftp/users.conf:/etc/sftp/users.conf
       - /docker/sftp/ssh_host_ed25519_key:/etc/ssh/ssh_host_ed25519_key:ro
       - /docker/sftp/ssh_host_rsa_key:/etc/ssh/ssh_host_rsa_key:ro
