@@ -10,6 +10,8 @@ services:
     restart: unless-stopped
     network_mode: DockerInternal
     privileged: true
+    cap_add:
+      - SYS_ADMIN
     ports:
       - "9922:22"
     volumes:
