@@ -12,6 +12,7 @@ services:
     ports:
       - "9922:22"
     volumes:
+      - /docker/sftp/data:/home
       - /mnt/nas/upload:/home/$user/upload
       #- "/mnt/nas/TV Shows":/home/tv:ro
       #- /mnt/nas/Movies:/home/movies:ro
