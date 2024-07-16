@@ -1,6 +1,7 @@
 services:
  sftp:
     image: atmoz/sftp
+    container_name: sftp
     logging:
       driver: "json-file"
       options:
