@@ -9,8 +9,7 @@ services:
         max-size: 1m
     restart: unless-stopped
     network_mode: DockerInternal
-    cap_add:
-      - SYS_ADMIN
+    privileged: true
     ports:
       - "9922:22"
     volumes:
