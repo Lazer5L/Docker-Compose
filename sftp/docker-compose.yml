@@ -20,3 +20,4 @@ services:
       - /docker/sftp/users.conf:/etc/sftp/users.conf
       - /docker/sftp/ssh_host_ed25519_key:/etc/ssh/ssh_host_ed25519_key:ro
       - /docker/sftp/ssh_host_rsa_key:/etc/ssh/ssh_host_rsa_key:ro
+      - /docker/sftp/bindmount.sh:/etc/sftp.d/bindmount.sh
