@@ -13,15 +13,10 @@ services:
         max-size: 1m
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-#      - /mnt/nas/bk/Traefik/traefik.yml:/etc/traefik/traefik.yml
-#      - /mnt/nas/bk/Traefik/acme.json:/acme.json
-#      - /mnt/nas/bk/Traefik/letsencrypt:/letsencrypt
-#      - /mnt/nas/bk/Traefik/logs:/logs
       - /docker/Traefik/traefik.yml:/etc/traefik/traefik.yml
       - /docker/Traefik/acme.json:/acme.json
       - /docker/Traefik/letsencrypt:/letsencrypt
       - /docker/Traefik/logs:/logs
-#    network_mode: DockerExternal
     labels:
       - traefik.http.routers.traefik.tls=true
       - traefik.http.routers.traefik.rule=Host(`traefik.tuckeredoutbert.com`)
