@@ -16,8 +16,8 @@ services:
       - traefik.http.services.uptime-kuma.loadbalancer.server.port=3001
       - traefik.docker.network=DockerExternal
       - traefik.http.routers.redirect-router.middlewares=redirect-regex
-      - traefik.http.middlewares.redirect-regex.redirectregex.regex=(.)*
-      - traefik.http.middlewares.redirect-regex.redirectregex.replacement=https://status.tuckeredoutbert.com/status/tob
+      - traefik.http.middlewares.redirect-regex.redirectregex.regex=status.tuckeredoutber.com(.*)
+      - traefik.http.middlewares.redirect-regex.redirectregex.replacement=https://status.tuckeredoutbert.com${1}/status/tob
       - traefik.http.middlewares.redirect-regex.redirectregex.permanent=false
     networks:
       DockerExternal:
