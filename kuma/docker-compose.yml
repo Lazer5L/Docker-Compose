@@ -15,10 +15,10 @@ services:
       - traefik.http.routers.uptime-kuma.tls.certresolver=lets-encrypt
       - traefik.http.services.uptime-kuma.loadbalancer.server.port=3001
       - traefik.docker.network=DockerExternal
-     #- traefik.http.routers.redirect-router.middlewares=redirect-regex
-      #- traefik.http.middlewares.redirect-regex.redirectregex.regex=(.)*
-     # - traefik.http.middlewares.redirect-regex.redirectregex.replacement=https://status.tuckeredoutbert.com/status/tob
-   #   - traefik.http.middlewares.redirect-regex.redirectregex.permanent=false
+      - traefik.http.routers.redirect-router.middlewares=redirect-regex
+      - traefik.http.middlewares.redirect-regex.redirectregex.regex=(.)*
+      - traefik.http.middlewares.redirect-regex.redirectregex.replacement=https://status.tuckeredoutbert.com/status/tob
+      - traefik.http.middlewares.redirect-regex.redirectregex.permanent=false
     networks:
       DockerExternal:
       DockerInternal:
@@ -26,7 +26,6 @@ services:
       - /docker/kuma/config:/app/data
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
-      # <Host Port>:<Container Port>
       - 3001:3001
     restart: unless-stopped
     
