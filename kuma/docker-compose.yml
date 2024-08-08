@@ -10,8 +10,8 @@ services:
     labels:
       - traefik.enable=true
       - traefik.http.routers.uptime-kuma.rule=Host(`status.tuckeredoutbert.com`)  
-      - traefik.http.middlewares.replacepath-middleware.replacepath.path: /status/tob
-      - traefik.http.routers.swagger-router.middlewares: replacepath-middleware
+      - traefik.http.middlewares.replacepath-middleware.replacepath.path=/status/tob
+      - traefik.http.routers.swagger-router.middlewares=replacepath-middleware
       - traefik.http.routers.uptime-kuma.entrypoints=web-secure
       - traefik.http.routers.uptime-kuma.tls=true
       - traefik.http.routers.uptime-kuma.tls.certresolver=lets-encrypt
