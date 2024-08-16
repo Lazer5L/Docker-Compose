@@ -13,6 +13,7 @@ services:
         max-size: 1m
     volumes:
       - /docker/heimdall/config:/config
+    network_mode: DockerInternal
     ports:
       - 4480:80
       - 9443:443
