@@ -1,0 +1,15 @@
+name: Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    environment: production
+    concurrency: production
+    steps:
+      - name: deploy
+        # ...deployment-specific steps
