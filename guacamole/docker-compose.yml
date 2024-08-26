@@ -21,7 +21,7 @@ services:
     environment:
       PGDATA: /var/lib/postgresql/data/guacamole
       POSTGRESQL_DB: guacamole_db
-      POSTGRESQL_PASSWORD: pgpass
+      POSTGRES_PASSWORD: pgpass
       POSTGRESQL_USER: guacamole_user
     logging:
       driver: "json-file"
@@ -47,7 +47,7 @@ services:
       GUACD_HOSTNAME: guacd
       POSTGRESQL_DATABASE: guacamole_db
       POSTGRESQL_HOSTNAME: postgres
-      POSTGRESQL_PASSWORD: pgpass
+      POSTGRES_PASSWORD: pgpass
       POSTGRESQL_USER: guacamole_user
     networks:
       DockerInternal:
