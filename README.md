@@ -6,7 +6,7 @@
 - Deluge - Torrent  
 - Guacamole - Web based remote access  
 - Home-Assistant - Home automation  
--- Python-Matter-Server - Matter integration for HA  
+  - Python-Matter-Server - Matter integration for HA  
 - Komga - Comic Media Server  
 - Ombi - Request management  
 - Organizr - Single Source Webview of Servarr  
