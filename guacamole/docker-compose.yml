@@ -43,6 +43,7 @@ services:
     - guacd
     - postgres
     environment:
+      WEBAPP_CONTEXT: "ROOT"
       GUACD_HOSTNAME: guacd
       POSTGRES_DATABASE: guacamole_db
       POSTGRES_HOSTNAME: postgres
@@ -61,8 +62,6 @@ services:
       options:
         max-file: 5
         max-size: 1m
-    environment:
-      WEBAPP_CONTEXT: "ROOT"
     labels:
       - traefik.enable=true
       - traefik.http.routers.guacamole.rule=Host(`guac.tuckeredoutbert.com`)  
