@@ -54,7 +54,7 @@ services:
     volumes:
       - /docker/guacamole/config/record:/record:rw
     ports:
-    - 108080:8080
+    - 1080:8080
     restart: always
     logging:
       driver: "json-file"
@@ -67,7 +67,7 @@ services:
       - traefik.http.routers.guacamole.entrypoints=web-secure
       - traefik.http.routers.guacamole.tls.certresolver=lets-encrypt
       - traefik.docker.network=DockerExternal
-      - traefik.http.services.guacamole.loadbalancer.server.port=108080
+      - traefik.http.services.guacamole.loadbalancer.server.port=1080
       
 secrets:
    pgpass:
