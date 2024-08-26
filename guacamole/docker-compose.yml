@@ -61,6 +61,8 @@ services:
       options:
         max-file: 5
         max-size: 1m
+    environment:
+      WEBAPP_CONTEXT: "ROOT"
     labels:
       - traefik.enable=true
       - traefik.http.routers.guacamole.rule=Host(`guac.tuckeredoutbert.com`)  
