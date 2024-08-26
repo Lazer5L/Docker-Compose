@@ -1,6 +1,6 @@
 services:
   viseron:
-    image: roflcoopter/viseron:latest
+    image: roflcoopter/viseron:dev
     container_name: viseron
     logging:
       driver: "json-file"
