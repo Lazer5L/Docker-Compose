@@ -12,13 +12,13 @@
 - Organizr - Single Source Webview of Servarr  
 - Sabnzbd - News group reader  
 - Servarr Stack  
--- Sonarr - TV  
--- Radarr - Movies  
--- Readarr - Books  
--- Lidarr - Music  
--- Mylar3 - Comic  
--- Prowlarr - Indexers  
+  - Sonarr - TV  
+  - Radarr - Movies  
+  - Readarr - Books  
+  - Lidarr - Music  
+  - Mylar3 - Comic  
+  - Prowlarr - Indexers  
 - Traefik - Reverse Proxy  
 - Uptime-Kuma - Service Monitoring  
 - Viseron - NVR  
- Watchtower - Autoupdater for Containers  
+- Watchtower - Autoupdater for Containers  
