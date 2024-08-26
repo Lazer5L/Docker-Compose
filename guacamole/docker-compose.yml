@@ -1,5 +1,5 @@
 services:
- guacd:
+  guacd:
     container_name: guacd
     image: guacamole/guacd
     networks:
