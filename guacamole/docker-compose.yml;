@@ -1,0 +1,80 @@
+services:
+ guacd:
+    container_name: guacd
+    image: guacamole/guacd
+    networks:
+      DockerInternal:
+    logging:
+      driver: "json-file"
+      options:
+        max-file: 5
+        max-size: 1m
+    restart: always
+    volumes:
+    - /docker/guacamole/config/drive:/drive:rw
+    - /docker/guacamole/config/record:/record:rw
+  postgres:
+    image: postgres:15.2-alpine
+    container_name: postgres
+    secrets:
+      - pgpass
+    environment:
+      PGDATA: /var/lib/postgresql/data/guacamole
+      POSTGRES_DB: guacamole_db
+      POSTGRES_PASSWORD: pgpass
+      POSTGRES_USER: pgadmin
+    logging:
+      driver: "json-file"
+      options:
+        max-file: 5
+        max-size: 1m
+    networks:
+      DockerInternal:
+    restart: always
+    volumes:
+    - /docker/guacamole/config/init:/docker-entrypoint-initdb.d:z
+    - /docker/guacamole/config/data:/var/lib/postgresql/data:Z
+  guacamole:
+    image: guacamole/guacamole
+    container_name: guacamole
+    secrets:
+       - pgpass
+    depends_on:
+    - guacd
+    - postgres
+    environment:
+      GUACD_HOSTNAME: guacd
+      POSTGRES_DATABASE: guacamole_db
+      POSTGRES_HOSTNAME: postgres
+      POSTGRES_PASSWORD: pgpass
+      POSTGRES_USER: pgadmin
+    networks:
+      DockerInternal:
+      DockerExternal:
+    volumes:
+      - /docker/guacamole/config/record:/record:rw
+    ports:
+    - 108080:8080
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-file: 5
+        max-size: 1m
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.guacamole.rule=Host(`guac.tuckeredoutbert.com`)  
+      - traefik.http.routers.guacamole.entrypoints=web-secure
+      - traefik.http.routers.guacamole.tls.certresolver=lets-encrypt
+      - traefik.docker.network=DockerExternal
+      - traefik.http.services.guacamole.loadbalancer.server.port=108080
+      
+secrets:
+   pgpass:
+     file: /docker/guacamole/config/guac.txt
+    
+networks:
+  DockerExternal:
+    external: true
+  DockerInternal:
+    external: true
