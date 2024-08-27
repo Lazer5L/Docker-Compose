@@ -33,7 +33,7 @@ services:
     restart: always
     volumes:
     - ./init:/docker-entrypoint-initdb.d
-    - ./data:/var/lib/postgresql/data:Z
+    - /docker/guacamole/data:/var/lib/postgresql/data:Z
   guacamole:
     image: guacamole/guacamole
     container_name: guacamole
