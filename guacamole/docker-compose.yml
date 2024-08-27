@@ -32,16 +32,19 @@ services:
       DockerInternal:
     restart: always
     volumes:
-    - /docker/guacamole/config/init:/docker-entrypoint-initdb.d
-    - /docker/guacamole/config/data:/var/lib/postgresql/data:Z
+      - /docker/guacamole/config/init/initdb.sql:/initdb.sql
+      - /docker/guacamole/config/init/initdb.sql:/docker-entrypoint-initdb.d 
+      - /docker/guacamole/config/data:/var/lib/postgresql/data:Z
   guacamole:
     image: guacamole/guacamole
     container_name: guacamole
     secrets:
        - pgpass
     depends_on:
-    - guacd
-    - postgres
+      - guacd
+      - postgres
+    links:
+      - guacd
     environment:
       WEBAPP_CONTEXT: "ROOT"
       GUACD_HOSTNAME: guacd
@@ -53,7 +56,7 @@ services:
       DockerInternal:
       DockerExternal:
     ports:
-    - 1080:8080
+      - 1080:8080
     restart: always
     logging:
       driver: "json-file"
