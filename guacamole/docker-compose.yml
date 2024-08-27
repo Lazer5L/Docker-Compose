@@ -11,8 +11,8 @@ services:
         max-size: 1m
     restart: always
     volumes:
-      - ./guacd/drive:/drive:rw
-      - ./guacd/record:/record:rw
+      - /docker/guacamole/config/drive:/drive:rw
+      - /docker/guacamole/config/record:/record:rw
   postgres:
     image: postgres:15.2-alpine
     container_name: postgres
@@ -32,8 +32,8 @@ services:
       DockerInternal:
     restart: always
     volumes:
-    - ./init:/docker-entrypoint-initdb.d
-    - /docker/guacamole/data:/var/lib/postgresql/data:Z
+    - /docker/guacamole/config/init:/docker-entrypoint-initdb.d
+    - /docker/guacamole/config/data:/var/lib/postgresql/data:Z
   guacamole:
     image: guacamole/guacamole
     container_name: guacamole
