@@ -11,8 +11,8 @@ services:
         max-size: 1m
     restart: always
     volumes:
-    - /docker/guacamole/config/drive:/drive:rw
-    - /docker/guacamole/config/record:/record:rw
+      - ./guacd/drive:/drive:rw
+      - ./guacd/record:/record:rw
   postgres:
     image: postgres:15.2-alpine
     container_name: postgres
@@ -32,8 +32,8 @@ services:
       DockerInternal:
     restart: always
     volumes:
-    - /docker/guacamole/config/init:/docker-entrypoint-initdb.d:z
-    - /docker/guacamole/config/data:/var/lib/postgresql/data:Z
+    - ./init:/docker-entrypoint-initdb.d
+    - ./data:/var/lib/postgresql/data:Z
   guacamole:
     image: guacamole/guacamole
     container_name: guacamole
@@ -52,8 +52,6 @@ services:
     networks:
       DockerInternal:
       DockerExternal:
-    volumes:
-      - /docker/guacamole/config/record:/record:rw
     ports:
     - 1080:8080
     restart: always
@@ -65,6 +63,7 @@ services:
     labels:
       - traefik.enable=true
       - traefik.http.routers.guacamole.rule=Host(`guac.tuckeredoutbert.com`)  
+      - traefik.http.routers.guacamole.tls=true
       - traefik.http.routers.guacamole.entrypoints=web-secure
       - traefik.http.routers.guacamole.tls.certresolver=lets-encrypt
       - traefik.docker.network=DockerExternal
