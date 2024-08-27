@@ -32,7 +32,7 @@ services:
       DockerInternal:
     restart: always
     volumes:
-      - /docker/guacamole/config/init/initdb.sql:/initdb.sql
+     # - /docker/guacamole/config/init/initdb.sql:/initdb.sql
       - /docker/guacamole/config/init/initdb.sql:/docker-entrypoint-initdb.d 
       - /docker/guacamole/config/data:/var/lib/postgresql/data:Z
   guacamole:
