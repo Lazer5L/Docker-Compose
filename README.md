@@ -9,7 +9,7 @@
   - Python-Matter-Server - Matter integration for HA  
 - Komga - Comic Media Server  
 - Ombi - Request management  
-- Organizr - Single Source Webview of Servarr  
+- Organizr - Dashboard  
 - Sabnzbd - News group reader  
 - Servarr Stack  
   - Sonarr - TV  
