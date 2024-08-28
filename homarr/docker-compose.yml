@@ -1,0 +1,22 @@
+services:
+  homarr:
+    container_name: homarr
+    image: ghcr.io/ajnart/homarr:latest
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+    logging:
+      driver: "json-file"
+      options:
+        max-file: 5
+        max-size: 1m
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock # Optional, only if you want docker integration
+      - /docker/homarr/configs:/app/data/configs
+      - /docker/homarr/icons:/app/public/icons
+      - /docker/homarr/data:/data
+    network_mode: DockerInternal
+    ports:
+      - 7575:7575
+    restart: unless-stopped
