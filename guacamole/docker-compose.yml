@@ -1,7 +1,8 @@
 services:
   guacd:
-    container_name: guacd
     image: guacamole/guacd
+    container_name: guacd
+    hostname: guacd
     networks:
       DockerInternal:
     logging:
@@ -16,6 +17,7 @@ services:
   postgres:
     image: postgres:15.2-alpine
     container_name: postgres
+    hostname: postgres
     secrets:
       - pgpass
     environment:
@@ -38,6 +40,7 @@ services:
   guacamole:
     image: guacamole/guacamole
     container_name: guacamole
+    hostname: guacamole
     secrets:
        - pgpass
     depends_on:
