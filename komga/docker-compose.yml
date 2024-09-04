@@ -25,6 +25,32 @@ services:
       DockerExternal:
       DockerInternal:
     restart: unless-stopped
+  komf:
+    image: sndxr/komf:latest
+    container_name: komf
+    ports:
+      - "8085:8085"
+    user: "1000:1000"
+    environment:
+      #- KOMF_KOMGA_BASE_URI=https://komga.tuckeredoutbert.com #:25600
+      #- KOMF_KOMGA_USER=admin@example.org
+      #- KOMF_KOMGA_PASSWORD=admin
+      #- KOMF_KAVITA_BASE_URI=http://kavita:5000
+      #- KOMF_KAVITA_API_KEY=16707507-d05d-4696-b126-c3976ae14ffb
+     # - KOMF_LOG_LEVEL=INFO
+      - TZ=America/Chicago
+      # optional jvm options. Example config for low memory usage. Runs guaranteed cleanup up every 3600000ms(1hour)
+      - JAVA_TOOL_OPTIONS=-XX:+UnlockExperimentalVMOptions -XX:+UseShenandoahGC -XX:ShenandoahGCHeuristics=compact -XX:ShenandoahGuaranteedGCInterval=3600000 -XX:TrimNativeHeapInterval=3600000
+    volumes:
+      - /docker/komf/config:/config #path to directory with application.yml and database file
+    logging:
+      driver: "json-file"
+      options:
+        max-file: 5
+        max-size: 1m
+    networks:
+      DockerInternal:
+    restart: unless-stopped
     
 networks:
   DockerExternal:
