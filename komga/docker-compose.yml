@@ -30,7 +30,7 @@ services:
     container_name: komf
     ports:
       - "8085:8085"
-    user: "1000:1000"
+    #user: "1000:1000"
     environment:
       - PUID=1000
       - PGID=1000
