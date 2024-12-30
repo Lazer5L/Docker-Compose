@@ -6,4 +6,6 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-    env_file: "/mnt/nas/bk/jellyplex-watched/.env:./.env"
+    volumes:
+      - /mnt/nas/bk/jellyplex-watched:/env
+    env_file: "/env/.env"
