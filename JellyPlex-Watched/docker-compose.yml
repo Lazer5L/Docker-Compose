@@ -6,8 +6,8 @@ services:
       - PUID=1000
       - PGID=1000
     volumes:
-      - /mnt/nas/bk/jellyplex-watched:/env
-    env_file: "/env/.env"
+      - /mnt/nas/bk/jellyplex-watched/.env:/app/.env
+    #env_file: "./.env"
     logging:
       driver: "json-file"
       options:
