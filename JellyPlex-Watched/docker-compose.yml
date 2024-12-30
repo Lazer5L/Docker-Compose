@@ -16,3 +16,7 @@ services:
     networks:
       DockerInternal:
     restart: unless-stopped
+
+networks:
+  DockerInternal:
+    external: true
