@@ -2,10 +2,17 @@ services:
   jellyplex-watched:
     image: luigi311/jellyplex-watched:latest
     container_name: jellyplex-watched
-    restart: unless-stopped
     environment:
       - PUID=1000
       - PGID=1000
     volumes:
       - /mnt/nas/bk/jellyplex-watched:/env
-    env_file: "./env/.env"
+    env_file: "/env/.env"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: 5
+        max-size: 1m
+    networks:
+      DockerInternal:
+    restart: unless-stopped
