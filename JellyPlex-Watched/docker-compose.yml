@@ -8,4 +8,4 @@ services:
       - PGID=1000
     volumes:
       - /mnt/nas/bk/jellyplex-watched:/env
-    env_file: "/env/.env"
+    env_file: "./env/.env"
