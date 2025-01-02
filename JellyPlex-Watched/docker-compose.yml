@@ -7,6 +7,7 @@ services:
       - PGID=1000
     volumes:
       - /mnt/nas/bk/jellyplex-watched/.env:/app/.env
+      - /docker/jellyplex-watched/config:/config
     #env_file: "./.env"
     logging:
       driver: "json-file"
