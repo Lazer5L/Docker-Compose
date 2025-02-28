@@ -3,7 +3,7 @@ services:
     image: ghcr.io/advplyr/audiobookshelf:latest
     container_name: audiobookshelf
     ports:
-      - 13378:13378
+      - 13378:80
     volumes:
       - /mnt/nas/Library/audiobooks:/audiobooks
       - /mnt/nas/Library/books:/enooks
