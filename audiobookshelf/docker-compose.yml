@@ -10,3 +10,23 @@ services:
       - mnt/nas/bk/audiobookshelf/metadata:/metadata
     environment:
       - TZ=America/Chicago
+    logging:
+      driver: "json-file"
+      options:
+        max-file: 5
+        max-size: 1m
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.abs.rule=Host(`library.tuckeredoutbert.com`)  
+      - traefik.http.routers.abs.entrypoints=web-secure
+      - traefik.http.routers.abs.tls.certresolver=lets-encrypt
+      - traefik.docker.network=DockerExternal
+    networks:
+      DockerExternal:
+      DockerInternal:
+    restart: unless-stopped
+networks:
+  DockerExternal:
+    external: true
+  DockerInternal:
+    external: true
