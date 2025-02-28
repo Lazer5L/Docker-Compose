@@ -8,7 +8,7 @@ services:
       - /mnt/nas/Library/audiobooks:/audiobooks
       - /mnt/nas/Library/books:/enooks
       - /docker/audiobookshelf/config:/config
-      - mnt/nas/bk/audiobookshelf/metadata:/metadata
+      - /mnt/nas/bk/audiobookshelf/metadata:/metadata
     environment:
       - TZ=America/Chicago
     logging:
