@@ -5,8 +5,8 @@ services:
     ports:
       - 13378:80
     volumes:
-      - /mnt/nas/Library/audiobooks:/audiobooks
-      - /mnt/nas/Library/books:/enooks
+      - /mnt/nas/Library/Audiobooks:/audiobooks
+      - /mnt/nas/Library/Books:/enooks
       - /docker/audiobookshelf/config:/config
       - /mnt/nas/bk/audiobookshelf/metadata:/metadata
     environment:
