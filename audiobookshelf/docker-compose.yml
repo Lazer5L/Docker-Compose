@@ -1,0 +1,12 @@
+services:
+  audiobookshelf:
+    image: ghcr.io/advplyr/audiobookshelf:latest
+    ports:
+      - 13378:13378
+    volumes:
+      - /mnt/nas/Library/audiobooks:/audiobooks
+      - /mnt/nas/Library/books:/enooks
+      - /docker/audiobookshelf/config:/config
+      - mnt/nas/bk/audiobookshelf/metadata:/metadata
+    environment:
+      - TZ=America/Chicago
