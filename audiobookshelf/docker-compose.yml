@@ -1,6 +1,7 @@
 services:
   audiobookshelf:
     image: ghcr.io/advplyr/audiobookshelf:latest
+    container_name: audiobookshelf
     ports:
       - 13378:13378
     volumes:
@@ -17,9 +18,9 @@ services:
         max-size: 1m
     labels:
       - traefik.enable=true
-      - traefik.http.routers.abs.rule=Host(`library.tuckeredoutbert.com`)  
-      - traefik.http.routers.abs.entrypoints=web-secure
-      - traefik.http.routers.abs.tls.certresolver=lets-encrypt
+      - traefik.http.routers.audiobookshelf.rule=Host(`library.tuckeredoutbert.com`)  
+      - traefik.http.routers.audiobookshelf.entrypoints=web-secure
+      - traefik.http.routers.audiobookshelf.tls.certresolver=lets-encrypt
       - traefik.docker.network=DockerExternal
     networks:
       DockerExternal:
