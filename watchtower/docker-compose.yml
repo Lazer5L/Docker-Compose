@@ -1,6 +1,6 @@
 services:
   watchtower:
-    image: v2tec/watchtower
+    image: containrrr/watchtower
     container_name: watchtower
     logging:
       driver: "json-file"
@@ -10,10 +10,6 @@ services:
     restart: unless-stopped
     environment:
       #- TZ=America/Chicago
-      WATCHTOWER_NOTIFICATIONS: slack
-      WATCHTOWER_NOTIFICATION_SLACK_HOOK_URL: "https://discordapp.com/api/webhooks/732244627842793543/pz0yw2i0vedIQoz7TJpGvPUUTFO_vdQvtu_blS9-yeWbzXb8m6FdNnAdFNRLSkqrv9tJ/slack"
-      WATCHTOWER_NOTIFICATION_SLACK_IDENTIFIER: DockerBot
-      WATCHTOWER_NOTIFICATIONS_LEVEL: Error
     network_mode: DockerInternal
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
