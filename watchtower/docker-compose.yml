@@ -8,10 +8,7 @@ services:
         max-file: 5
         max-size: 1m
     restart: unless-stopped
-    environment:
-      #- TZ=America/Chicago
     network_mode: DockerInternal
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-#      - /docker/watchtower/.docker/config.json:/config.json
     command: --interval 3600 --cleanup
