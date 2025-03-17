@@ -1,7 +1,8 @@
 services:
   viseron:
-    image: roflcoopter/viseron:dev
+    image: roflcoopter/viseron:latest
     container_name: viseron
+    shm_size: "1024mb"
     logging:
       driver: "json-file"
       options:
@@ -9,6 +10,10 @@ services:
         max-size: 1m
     volumes:
       - /mnt/nas/bk/rec:/recordings
+      - /mnt/nas/bk/rec/segments:/segments
+      - /mnt/nas/bk/rec/snapshots:/snapshots
+      - /mnt/nas/bk/rec/thumbnails:/thumbnails
+      - /mnt/nas/bk/rec/eventclips:/event_clips
       - /docker/viseron/config:/config
       - /etc/localtime:/etc/localtime:ro
     network_mode: DockerInternal
