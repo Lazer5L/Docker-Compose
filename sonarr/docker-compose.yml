@@ -129,10 +129,7 @@ services:
         max-size: 1m
     volumes:
       - /docker/readarr/config:/config
-      - /mnt/nas/Library/:/library
-      - /mnt/nas/Downloads/nzb:/downloadsnzb
-      - /mnt/nas/Downloads/Complete:/downloadstor
-      - /mnt/nas/bk/arrbackup:/arrbackup
+      - /mnt/nas:/nas
     network_mode: DockerInternal
     ports:
       - 8787:8787
