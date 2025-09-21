@@ -15,6 +15,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - /docker/Traefik/traefik.yml:/etc/traefik/traefik.yml
       - /docker/Traefik/acme.json:/acme.json
+      - /docker/Traefik/dynamic_conf.yml:/dynamic_conf.yml
       #- /docker/Traefik/letsencrypt:/letsencrypt
       - /docker/Traefik/logs:/logs
     labels:
