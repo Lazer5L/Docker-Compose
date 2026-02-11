@@ -11,7 +11,7 @@ services:
     environment:
       APP_URL: http://localhost:8099
     ports:
-      - 8099:8090
+      - 8099:8099
     volumes:
       - /docker/beszel/config:/beszel_data
       - /docker/beszel/config/socket:/beszel_socket
