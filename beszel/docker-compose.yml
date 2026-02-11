@@ -34,7 +34,6 @@ services:
       options:
         max-file: 5
         max-size: 1m
-    network_mode: host
     volumes:
       - /docker/beszel/config/agent:/var/lib/beszel-agent
       - /docker/beszel/config/agent/socket:/beszel_socket
