@@ -9,9 +9,9 @@ services:
         max-file: 5
         max-size: 1m
     environment:
-      APP_URL: http://localhost:8099
+      APP_URL: http://localhost:8090
     ports:
-      - 8099:8099
+      - 8099:8090
     volumes:
       - /docker/beszel/config:/beszel_data
       - /docker/beszel/config/socket:/beszel_socket
@@ -38,14 +38,23 @@ services:
       - /docker/beszel/config/agent:/var/lib/beszel-agent
       - /docker/beszel/config/agent/socket:/beszel_socket
       - /var/run/docker.sock:/var/run/docker.sock:ro
+    secrets:
+      - beszel_token
+      - beszel_key
     environment:
       LISTEN: /beszel_socket/beszel.sock
       HUB_URL: http://localhost:8090
-      TOKEN: <token>
-      KEY: "<key>"
+      TOKEN: /run/secret/beszel_token
+      KEY: /run/sexrets/beszel_key
     networks:
       DockerInternal:
 
+secrets:
+  beszel_token:
+    file: /docker/baszel/config/token
+  beszel_key:
+    file: /docker/baszel/config/key
+    
 networks:
   DockerExternal:
     external: true
