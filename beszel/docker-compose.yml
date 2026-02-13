@@ -43,7 +43,7 @@ services:
       - beszel_key
     environment:
       LISTEN: /beszel_socket/beszel.sock
-      HUB_URL: http://localhost:8090
+      HUB_URL: https://beszel.tuckeredoutbert.com/
       TOKEN: /run/secret/beszel_token
       KEY: /run/sexrets/beszel_key
     networks:
