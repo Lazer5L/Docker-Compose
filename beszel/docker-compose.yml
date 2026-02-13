@@ -36,7 +36,6 @@ services:
         max-size: 1m
     volumes:
       - /docker/beszel/config/agent:/var/lib/beszel-agent
-      - ./beszel_socket:/beszel_socket
       - /var/run/docker.sock:/var/run/docker.sock:ro
     secrets:
       - beszel_token
