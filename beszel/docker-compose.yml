@@ -9,7 +9,7 @@ services:
         max-file: 5
         max-size: 1m
     environment:
-      APP_URL: http://beszel.tuckeredoutbert.com/
+      APP_URL: https://beszel.tuckeredoutbert.com/
     ports:
       - 8099:8090
     volumes:
