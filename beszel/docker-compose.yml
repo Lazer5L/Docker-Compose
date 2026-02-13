@@ -51,9 +51,9 @@ services:
 
 secrets:
   beszel_token:
-    file: /docker/baszel/config/token
+    file: /docker/beszel/config/token
   beszel_key:
-    file: /docker/baszel/config/key
+    file: /docker/beszel/config/key
     
 networks:
   DockerExternal:
