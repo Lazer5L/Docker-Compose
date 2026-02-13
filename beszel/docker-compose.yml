@@ -14,7 +14,7 @@ services:
       - 8099:8090
     volumes:
       - /docker/beszel/config:/beszel_data
-      - /docker/beszel/config/socket:/beszel_socket
+      - ./beszel_socket:/beszel_socket
     labels:
       - traefik.enable=true
       - traefik.http.routers.beszel.rule=Host(`beszel.tuckeredoutbert.com`)  
@@ -36,7 +36,7 @@ services:
         max-size: 1m
     volumes:
       - /docker/beszel/config/agent:/var/lib/beszel-agent
-      - /docker/beszel/config/agent/socket:/beszel_socket
+      - ./beszel_socket:/beszel_socket
       - /var/run/docker.sock:/var/run/docker.sock:ro
     secrets:
       - beszel_token
