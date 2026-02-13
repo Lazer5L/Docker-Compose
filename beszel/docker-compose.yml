@@ -23,7 +23,6 @@ services:
       - traefik.docker.network=DockerExternal  
     networks:
       DockerExternal:
-      DockerInternal:
 
   beszel-agent:
     image: henrygd/beszel-agent:latest
