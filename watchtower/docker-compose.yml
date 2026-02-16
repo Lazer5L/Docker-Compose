@@ -14,3 +14,12 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     command: --interval 3600 --cleanup
+     WATCHTOWER_NOTIFICATIONS: slack
+      WATCHTOWER_NOTIFICATION_SLACK_HOOK_URL: /run/secrets/watcherout_url
+      WATCHTOWER_NOTIFICATION_SLACK_IDENTIFIER: DockerBot
+    secrets:
+      - watcherout_url
+
+secrets:
+  watchtower_url:
+    file: /docker/watchtower/URL
