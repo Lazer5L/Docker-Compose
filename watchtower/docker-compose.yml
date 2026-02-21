@@ -1,6 +1,6 @@
 services:
   watchtower:
-    image: nickfedor/watchtower:latest
+    image: nickfedor/watchtower
     container_name: watchtower
     logging:
       driver: "json-file"
