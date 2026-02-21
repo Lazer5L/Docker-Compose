@@ -1,6 +1,6 @@
 services:
   watchtower:
-    image: nickfedor/watchtower
+    image: nickfedor/watchtower:latest
     container_name: watchtower
     logging:
       driver: "json-file"
@@ -11,10 +11,11 @@ services:
     network_mode: DockerInternal
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    WATCHTOWER_POLL_INTERVAL: 3600
-    WATCHTOWER_NOTIFICATIONS: slack
-    WATCHTOWER_NOTIFICATION_SLACK_HOOK_URL: /run/secrets/watchtower_url
-    WATCHTOWER_NOTIFICATION_SLACK_IDENTIFIER: DockerBot
+    command: --interval 3600
+    #WATCHTOWER_POLL_INTERVAL: 3600
+    #WATCHTOWER_NOTIFICATIONS: slack
+    #WATCHTOWER_NOTIFICATION_SLACK_HOOK_URL: /run/secrets/watchtower_url
+    #WATCHTOWER_NOTIFICATION_SLACK_IDENTIFIER: DockerBot
     secrets:
       - watchtower_url
 
