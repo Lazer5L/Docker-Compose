@@ -11,11 +11,10 @@ services:
     network_mode: DockerInternal
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    args:
-      WATCHTOWER_POLL_INTERVAL: 3600
-      WATCHTOWER_NOTIFICATIONS: slack
-      WATCHTOWER_NOTIFICATION_SLACK_HOOK_URL: /run/secrets/watchtower_url
-      WATCHTOWER_NOTIFICATION_SLACK_IDENTIFIER: DockerBot
+    WATCHTOWER_POLL_INTERVAL: 3600
+    WATCHTOWER_NOTIFICATIONS: slack
+    WATCHTOWER_NOTIFICATION_SLACK_HOOK_URL: /run/secrets/watchtower_url
+    WATCHTOWER_NOTIFICATION_SLACK_IDENTIFIER: DockerBot
     secrets:
       - watchtower_url
 
