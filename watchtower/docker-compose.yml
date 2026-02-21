@@ -9,12 +9,11 @@ services:
         max-size: 1m
     restart: unless-stopped
     network_mode: DockerInternal
-    #environment:
-    #  - DOCKER_API_VERSION=1.44
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    command: --interval 3600 --cleanup
-     WATCHTOWER_NOTIFICATIONS: slack
+    args:
+      WATCHTOWER_POLL_INTERVAL: 3600
+      WATCHTOWER_NOTIFICATIONS: slack
       WATCHTOWER_NOTIFICATION_SLACK_HOOK_URL: /run/secrets/watchtower_url
       WATCHTOWER_NOTIFICATION_SLACK_IDENTIFIER: DockerBot
     secrets:
