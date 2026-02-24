@@ -19,6 +19,6 @@ services:
     restart: unless-stopped
     network_mode: DockerInternal
 
-Secrets:
-  allowed_host:
-    file: /docker/homepage/hpallhost
+  Secrets:
+    allowed_host:
+      file: /docker/homepage/hpallhost
