@@ -12,5 +12,13 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro # pass local proxy
     ports:
       - 3000:3000
+    environment:
+      HOMEPAGE_ALLOWED_HOST: /run/secret/allowed_host
+    secrets:
+      - allowed_host
     restart: unless-stopped
     network_mode: DockerInternal
+
+Secrets:
+  allowed_host:
+    file: /docker/homepage/hpallhost
