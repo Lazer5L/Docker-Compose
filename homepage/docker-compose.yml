@@ -13,7 +13,7 @@ services:
     ports:
       - 3000:3000
     environment:
-      HOMEPAGE_ALLOWED_HOST: homepage:3000 #/run/secret/allowed_host
+      HOMEPAGE_ALLOWED_HOST=homepage:3000 #/run/secret/allowed_host
     #secrets:
     #  - allowed_host
     restart: unless-stopped
