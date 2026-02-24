@@ -13,12 +13,12 @@ services:
     ports:
       - 3000:3000
     environment:
-      HOMEPAGE_ALLOWED_HOST: /run/secret/allowed_host
-    secrets:
-      - allowed_host
+      HOMEPAGE_ALLOWED_HOST: *:3000 #/run/secret/allowed_host
+    #secrets:
+    #  - allowed_host
     restart: unless-stopped
     network_mode: DockerInternal
 
-  secrets:
-    allowed_host:
-      file: /docker/homepage/hpallhost
+  #ecrets:
+  #  allowed_host:
+   #   file: /docker/homepage/hpallhost
