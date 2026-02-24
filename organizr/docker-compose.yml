@@ -1,6 +1,6 @@
 services:
   organizr:
-    image: organizr/organizr:latest
+    image: ghcr.io/organizr/organizr:latest
     container_name: organizr
     environment:
       - PUID=1000
